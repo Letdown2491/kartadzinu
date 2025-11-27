@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary - Kartadzinu</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Vocabulary-specific styles */
+        .search-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            position: sticky;
+            top: 60px;
+            z-index: 50;
+        }
+
+        .search-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.75rem 1rem;
+            font-size: 1.1rem;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .filter-select {
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+            background: white;
+        }
+
+        .search-stats {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .letter-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .letter-nav a {
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            line-height: 2rem;
+            text-align: center;
+            background: var(--bg-alt);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .letter-nav a:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .letter-section {
+            margin-bottom: 2rem;
+        }
+
+        .letter-header {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .vocab-entry {
+            background: white;
+            padding: 1rem 1.25rem;
+            margin-bottom: 0.75rem;
+            border-radius: 4px;
+            border-left: 3px solid var(--accent);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+
+        .vocab-entry:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        }
+
+        .vocab-headword {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .vocab-pronunciation {
+            color: var(--text-light);
+            font-family: monospace;
+            margin-left: 0.5rem;
+        }
+
+        .vocab-pos {
+            display: inline-block;
+            background: var(--bg-alt);
+            color: var(--secondary);
+            padding: 0.1rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            margin-left: 0.5rem;
+        }
+
+        .vocab-definition {
+            margin-top: 0.5rem;
+            padding-left: 1rem;
+        }
+
+        .vocab-definition ol {
+            margin: 0;
+            padding-left: 1.25rem;
+        }
+
+        .vocab-definition li {
+            margin-bottom: 0.25rem;
+        }
+
+        .vocab-example {
+            color: var(--text-light);
+            font-style: italic;
+            margin-top: 0.25rem;
+            padding-left: 1rem;
+        }
+
+        .vocab-example .kartadzinu {
+            color: var(--secondary);
+            font-style: italic;
+        }
+
+        .vocab-example .english {
+            color: var(--text-light);
+            font-style: normal;
+        }
+
+        .vocab-note {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+            padding-left: 1rem;
+        }
+
+        .vocab-origin {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-light);
+        }
+
+        .no-results h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Loading state */
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 600px) {
+            .search-container {
+                position: relative;
+                top: 0;
+            }
+            .search-row {
+                flex-direction: column;
+            }
+            .search-input, .filter-select {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">Kartadzinu</a></h1>
+        <p class="subtitle">Ditsionarju Kartadzinu-Inglésu</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="grammar/index.html">Grammar</a></li>
+            <li><a href="vocabulary.html" class="active">Vocabulary</a></li>
+            <li><a href="library.html">Library</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="search-container">
+            <div class="search-row">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search Kartadzinu or English..." autofocus>
+                <select id="posFilter" class="filter-select">
+                    <option value="">All Parts of Speech</option>
+                    <option value="n.">Nouns</option>
+                    <option value="v.">Verbs</option>
+                    <option value="adj.">Adjectives</option>
+                    <option value="adv.">Adverbs</option>
+                    <option value="prep.">Prepositions</option>
+                    <option value="conj.">Conjunctions</option>
+                    <option value="pron.">Pronouns</option>
+                    <option value="part.">Particles</option>
+                    <option value="interj.">Interjections</option>
+                </select>
+            </div>
+            <div class="search-stats" id="searchStats">Loading vocabulary...</div>
+            <div class="letter-nav" id="letterNav"></div>
+        </div>
+
+        <div id="vocabList">
+            <div class="loading">Loading vocabulary database...</div>
+        </div>
+    </main>
+
+    <footer>
+        <p><strong>Kartadzinu-English Dictionary</strong> — Version 3.1, November 2025</p>
+        <p>853 headwords</p>
+    </footer>
+
+    <script src="js/vocab-data.js"></script>
+    <script>
+    // vocabData is loaded from js/vocab-data.js
+    // DOM elements
+    const searchInput = document.getElementById('searchInput');
+    const posFilter = document.getElementById('posFilter');
+    const searchStats = document.getElementById('searchStats');
+    const letterNav = document.getElementById('letterNav');
+    const vocabList = document.getElementById('vocabList');
+
+    // Normalize accented characters to base letter
+    function baseLetter(char) {
+        return char.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase();
+    }
+
+    // Build letter navigation
+    function buildLetterNav() {
+        const letters = [...new Set(vocabData.map(e => baseLetter(e.word[0])))].sort();
+        letterNav.innerHTML = letters.map(l =>
+            `<a href="#letter-${l}" onclick="scrollToLetter('${l}')">${l}</a>`
+        ).join('');
+    }
+
+    // Scroll to letter section
+    function scrollToLetter(letter) {
+        const section = document.getElementById(`letter-${letter}`);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+    window.scrollToLetter = scrollToLetter;
+
+    // Render vocabulary list
+    function renderVocab(entries) {
+        if (entries.length === 0) {
+            vocabList.innerHTML = `
+                <div class="no-results">
+                    <h3>No results found</h3>
+                    <p>Try a different search term or clear the filters.</p>
+                </div>
+            `;
+            searchStats.textContent = 'No matches';
+            return;
+        }
+
+        // Group by first letter
+        const grouped = {};
+        entries.forEach(e => {
+            const letter = e.word[0].toUpperCase();
+            if (!grouped[letter]) grouped[letter] = [];
+            grouped[letter].push(e);
+        });
+
+        let html = '';
+        Object.keys(grouped).sort().forEach(letter => {
+            html += `
+                <div class="letter-section" id="letter-${letter}">
+                    <div class="letter-header">${letter}</div>
+            `;
+            grouped[letter].forEach(entry => {
+                html += renderEntry(entry);
+            });
+            html += '</div>';
+        });
+
+        vocabList.innerHTML = html;
+        searchStats.textContent = `Showing ${entries.length} of ${vocabData.length} entries`;
+    }
+
+    // Render single entry
+    function renderEntry(entry) {
+        let html = `
+            <div class="vocab-entry">
+                <span class="vocab-headword">${entry.word}</span>
+                <span class="vocab-pronunciation">${entry.pron}</span>
+                <span class="vocab-pos">${entry.pos}</span>
+        `;
+
+        if (entry.origin) {
+            html += `<span class="vocab-origin"> (${entry.origin})</span>`;
+        }
+
+        html += '<div class="vocab-definition">';
+        if (entry.defs.length === 1) {
+            html += entry.defs[0];
+        } else {
+            html += '<ol>' + entry.defs.map(d => `<li>${d}</li>`).join('') + '</ol>';
+        }
+        html += '</div>';
+
+        if (entry.ex && entry.ex.length > 0) {
+            for (let i = 0; i < entry.ex.length; i += 2) {
+                if (entry.ex[i]) {
+                    html += `<div class="vocab-example">`;
+                    html += `<span class="kartadzinu">${entry.ex[i]}</span>`;
+                    if (entry.ex[i+1]) {
+                        html += ` — <span class="english">"${entry.ex[i+1]}"</span>`;
+                    }
+                    html += '</div>';
+                }
+            }
+        }
+
+        html += '</div>';
+        return html;
+    }
+
+    // Filter entries
+    function filterEntries() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        const posFilterVal = posFilter.value;
+
+        let filtered = vocabData;
+
+        // Filter by part of speech
+        if (posFilterVal) {
+            filtered = filtered.filter(e => e.pos.includes(posFilterVal));
+        }
+
+        // Filter by search term
+        if (searchTerm) {
+            filtered = filtered.filter(e => {
+                // Search in word
+                if (e.word.toLowerCase().includes(searchTerm)) return true;
+                // Search in definitions
+                if (e.defs.some(d => d.toLowerCase().includes(searchTerm))) return true;
+                // Search in examples
+                if (e.ex && e.ex.some(ex => ex.toLowerCase().includes(searchTerm))) return true;
+                return false;
+            });
+        }
+
+        renderVocab(filtered);
+    }
+
+    // Event listeners
+    searchInput.addEventListener('input', filterEntries);
+    posFilter.addEventListener('change', filterEntries);
+
+    // Initial render
+    buildLetterNav();
+    renderVocab(vocabData);
+    </script>
+</body>
+</html>

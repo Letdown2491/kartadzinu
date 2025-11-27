@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartadzinu - An African Romance Language</title>
+    <style>
+        :root {
+            --primary: #8B4513;
+            --primary-light: #D2691E;
+            --secondary: #2F4F4F;
+            --accent: #DAA520;
+            --bg: #FDF5E6;
+            --bg-alt: #FAF0E6;
+            --text: #333;
+            --text-light: #666;
+            --border: #DEB887;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        header .tagline {
+            margin-top: 1rem;
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--secondary);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background: var(--primary-light);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--accent);
+        }
+
+        section h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        section h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 1rem;
+        }
+
+        section h4 {
+            color: var(--primary-light);
+            margin: 1rem 0 0.5rem;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--bg-alt);
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: var(--bg-alt);
+        }
+
+        /* Example boxes */
+        .example {
+            background: var(--bg-alt);
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            border-left: 3px solid var(--accent);
+        }
+
+        .example .rumantsu {
+            font-style: italic;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .example .english {
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
+
+        /* Dictionary entries */
+        .dict-entry {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .dict-entry:last-child {
+            border-bottom: none;
+        }
+
+        .dict-entry .headword {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .dict-entry .pronunciation {
+            color: var(--text-light);
+            font-family: monospace;
+        }
+
+        .dict-entry .pos {
+            font-style: italic;
+            color: var(--secondary);
+            margin-left: 0.5rem;
+        }
+
+        .dict-entry .definition {
+            margin: 0.5rem 0 0.5rem 1rem;
+        }
+
+        /* Translation cards */
+        .translation-card {
+            background: var(--bg-alt);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .translation-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .translation-card .meta {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .bilingual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .bilingual {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .bilingual .col h5 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .bilingual .rumantsu-text {
+            font-style: italic;
+        }
+
+        /* Letter index */
+        .letter-index {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: var(--bg-alt);
+            border-radius: 4px;
+        }
+
+        .letter-index a {
+            padding: 0.25rem 0.75rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .letter-index a:hover {
+            background: var(--primary-light);
+        }
+
+        /* Collapsible sections */
+        .collapsible {
+            cursor: pointer;
+            padding: 1rem;
+            background: var(--bg-alt);
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            border-radius: 4px;
+            margin: 0.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .collapsible:hover {
+            background: var(--border);
+        }
+
+        .collapsible::after {
+            content: '+';
+            font-size: 1.5rem;
+        }
+
+        .collapsible.active::after {
+            content: '−';
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 1rem;
+        }
+
+        .collapsible-content.show {
+            max-height: none;
+            padding: 1rem;
+        }
+
+        /* Search */
+        .search-box {
+            padding: 1rem;
+            background: var(--bg-alt);
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* Phonology table */
+        .phonology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .phonology-item {
+            background: var(--bg-alt);
+            padding: 1rem;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .phonology-item .letter {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .phonology-item .ipa {
+            font-family: monospace;
+            color: var(--secondary);
+        }
+
+        .phonology-item .example {
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            background: transparent;
+            padding: 0;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: var(--accent);
+        }
+
+        /* Print styles */
+        @media print {
+            nav, .search-box, .letter-index {
+                display: none;
+            }
+            section {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kartadzinu</h1>
+        <p class="subtitle">La Lingua de Kartago</p>
+        <p class="tagline">The Language of Carthage — An African Romance Language</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="grammar/index.html">Grammar</a></li>
+            <li><a href="vocabulary.html">Vocabulary</a></li>
+            <li><a href="library.html">Library</a></li>
+        </ul>
+    </nav>
+
+    <!-- Secondary navigation for page sections -->
+    <nav style="background: var(--primary-light);">
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#phonology">Phonology</a></li>
+            <li><a href="#grammar-preview">Grammar Preview</a></li>
+            <li><a href="#vocabulary-preview">Vocabulary Preview</a></li>
+            <li><a href="#phrases">Phrases</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Overview Section -->
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>Kartadzinu is a constructed Romance language representing the fictional evolution of Latin in North Africa. Named for Carthage, the great city refounded by Rome, Kartadzinu developed with significant influence from the Berber (Amazigh) languages of the region. Unlike the Romance languages of Europe, it preserves features lost elsewhere while developing unique innovations.</p>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>Aspect-prominent verbal system</strong> — Distinguishes perfective (completed) from imperfective (ongoing) actions</li>
+                <li><strong>Construct state</strong> — Possessive suffixes attach directly to nouns for inalienable possession</li>
+                <li><strong>VSO word order</strong> — In narrative and formal registers</li>
+                <li><strong>Berber influence</strong> — Borrowed vocabulary and grammatical features</li>
+                <li><strong>Cleft constructions</strong> — For focus and emphasis</li>
+                <li><strong>Inclusive/exclusive "we"</strong> — <em>nós</em> (exclusive) vs <em>nósin</em> (inclusive)</li>
+            </ul>
+
+            <div class="example">
+                <div class="rumantsu">Bona vja! Kom stas?</div>
+                <div class="english">Hello! How are you?</div>
+            </div>
+        </section>
+
+        <!-- Phonology Section -->
+        <section id="phonology">
+            <h2>Phonology</h2>
+
+            <h3>Vowels</h3>
+            <p>Kartadzinu has <strong>seven vowels</strong>, preserving a distinction from Latin lost in most Romance languages. Like Sardinian (and probably African Romance), it distinguishes open and closed e/o:</p>
+            <div class="phonology-grid">
+                <div class="phonology-item">
+                    <div class="letter">a</div>
+                    <div class="ipa">/a/</div>
+                    <div class="example"><em>kasa</em> "house"</div>
+                </div>
+                <div class="phonology-item">
+                    <div class="letter">e</div>
+                    <div class="ipa">/ɛ/</div>
+                    <div class="example"><em>bene</em> "well" (open)</div>
+                </div>
+                <div class="phonology-item">
+                    <div class="letter">é</div>
+                    <div class="ipa">/e/</div>
+                    <div class="example"><em>kéna</em> "dinner" (closed)</div>
+                </div>
+                <div class="phonology-item">
+                    <div class="letter">i</div>
+                    <div class="ipa">/i/</div>
+                    <div class="example"><em>filu</em> "son"</div>
+                </div>
+                <div class="phonology-item">
+                    <div class="letter">o</div>
+                    <div class="ipa">/ɔ/</div>
+                    <div class="example"><em>bonu</em> "good" (open)</div>
+                </div>
+                <div class="phonology-item">
+                    <div class="letter">ó</div>
+                    <div class="ipa">/o/</div>
+                    <div class="example"><em>sólu</em> "alone" (closed)</div>
+                </div>
+                <div class="phonology-item">
+                    <div class="letter">u</div>
+                    <div class="ipa">/u/</div>
+                    <div class="example"><em>luna</em> "moon"</div>
+                </div>
+            </div>
+            <p style="margin-top: 1rem;"><strong>Vowel origins:</strong> Open e/o come from Latin short Ĕ/Ŏ. Closed é/ó come from Latin long Ē/Ō or short Ĭ/Ŭ.</p>
+            <p><strong>Tip for English speakers:</strong> English "bay" and "go" end with glides (/eɪ/ and /oʊ/). Kartadzinu é and ó are <em>pure</em> vowels—hold the mouth position steady without moving to another sound.</p>
+
+            <h3>Stress</h3>
+            <p>Stress is predictable:</p>
+            <ul>
+                <li><strong>Penultimate</strong> (second-to-last) syllable in most words: <em>KA-sa</em>, <em>a-MI-ku</em></li>
+                <li><strong>Antepenultimate</strong> (third-to-last) in certain patterns: <em>DÓ-mi-nu</em>, <em>FE-mi-na</em></li>
+            </ul>
+            <p>The accents é and ó mark vowel <em>quality</em>, not stress.</p>
+
+            <h3>Consonants</h3>
+            <p><strong>No Palatalization:</strong> Unlike Italian or Spanish, Kartadzinu preserves Latin /k/ and /g/ before all vowels — a feature shared with Sardinian and attested in African Latin inscriptions.</p>
+            <table>
+                <tr>
+                    <th>Letters</th>
+                    <th>Sound</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td>k, c</td>
+                    <td>/k/ always</td>
+                    <td><em>kelu</em> "sky", <em>kentu</em> "hundred"</td>
+                </tr>
+                <tr>
+                    <td>g</td>
+                    <td>/g/ always</td>
+                    <td><em>goia</em> "joy", <em>gente</em> "people"</td>
+                </tr>
+                <tr>
+                    <td>ts</td>
+                    <td>/ts/ (as in "cats")</td>
+                    <td><em>gratsia</em> "grace", <em>aktsione</em> "action"</td>
+                </tr>
+                <tr>
+                    <td>dj</td>
+                    <td>/dʒ/ (as in "judge")</td>
+                    <td><em>djustu</em> "just"</td>
+                </tr>
+                <tr>
+                    <td>nj</td>
+                    <td>/ɲ/ (as in "canyon")</td>
+                    <td><em>sinjare</em> "to sign"</td>
+                </tr>
+                <tr>
+                    <td>kw, qu</td>
+                    <td>/kw/ (as in "queen")</td>
+                    <td><em>kwatru, quando</em> "four, when"</td>
+                </tr>
+                <tr>
+                    <td>lj</td>
+                    <td>/ʎ/ (as in "million")</td>
+                    <td><em>palju</em> "cloak"</td>
+                </tr>
+                <tr>
+                    <td>r</td>
+                    <td>/r/ (trilled, as in Spanish)</td>
+                    <td><em>rosa</em> "rose"</td>
+                </tr>
+                <tr>
+                    <td>rr</td>
+                    <td>/rː/ (longer trill)</td>
+                    <td><em>ferru</em> "iron", <em>terra</em> "earth"</td>
+                </tr>
+            </table>
+            <p style="margin-top: 1rem;"><strong>Double consonants</strong> are held longer: <em>terra</em> /ter-ra/, <em>anno</em> /an-no/, <em>bello</em> /bel-lo/.</p>
+
+        </section>
+
+        <!-- Grammar Section -->
+        <section id="grammar-preview">
+            <h2>Grammar Preview</h2>
+            <p style="margin-bottom: 1rem;"><a href="grammar/index.html" style="color: var(--primary); font-weight: bold;">→ View the complete Grammar guide</a></p>
+
+            <button class="collapsible">Articles & Nouns</button>
+            <div class="collapsible-content">
+                <h4>Definite Articles</h4>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Masculine</th>
+                        <th>Feminine</th>
+                    </tr>
+                    <tr>
+                        <td>Singular</td>
+                        <td><em>lu</em></td>
+                        <td><em>la</em></td>
+                    </tr>
+                    <tr>
+                        <td>Plural</td>
+                        <td><em>lus</em></td>
+                        <td><em>las</em></td>
+                    </tr>
+                </table>
+
+                <h4>Noun Plurals</h4>
+                <ul>
+                    <li>Masculine -u → -us: <em>libru</em> → <em>librus</em> "books"</li>
+                    <li>Feminine -a → -as: <em>kasa</em> → <em>kasas</em> "houses"</li>
+                    <li>Consonant-final: add -es: <em>patre</em> → <em>patres</em> "fathers"</li>
+                </ul>
+
+                <h4>The Construct State</h4>
+                <p>For inalienable possession (body parts, family, abstract qualities), the possessive attaches directly:</p>
+                <div class="example">
+                    <div class="rumantsu">kor-meu</div>
+                    <div class="english">"my heart" (heart-my)</div>
+                </div>
+                <div class="example">
+                    <div class="rumantsu">patr-meu</div>
+                    <div class="english">"my father" (father-my)</div>
+                </div>
+            </div>
+
+            <button class="collapsible">Pronouns</button>
+            <div class="collapsible-content">
+                <h4>Personal Pronouns</h4>
+                <table>
+                    <tr>
+                        <th>Person</th>
+                        <th>Subject</th>
+                        <th>Object</th>
+                    </tr>
+                    <tr>
+                        <td>1sg</td>
+                        <td><em>eu</em></td>
+                        <td><em>me</em></td>
+                    </tr>
+                    <tr>
+                        <td>2sg</td>
+                        <td><em>tu</em></td>
+                        <td><em>te</em></td>
+                    </tr>
+                    <tr>
+                        <td>3sg m.</td>
+                        <td><em>elu</em></td>
+                        <td><em>lu</em></td>
+                    </tr>
+                    <tr>
+                        <td>3sg f.</td>
+                        <td><em>ela</em></td>
+                        <td><em>la</em></td>
+                    </tr>
+                    <tr>
+                        <td>1pl excl.</td>
+                        <td><em>nos</em></td>
+                        <td><em>nos</em></td>
+                    </tr>
+                    <tr>
+                        <td>1pl incl.</td>
+                        <td><em>nosin</em></td>
+                        <td><em>nosin</em></td>
+                    </tr>
+                    <tr>
+                        <td>2pl</td>
+                        <td><em>vos</em></td>
+                        <td><em>vos</em></td>
+                    </tr>
+                    <tr>
+                        <td>3pl</td>
+                        <td><em>elus/elas</em></td>
+                        <td><em>lus/las</em></td>
+                    </tr>
+                </table>
+
+                <h4>Possessive Adjectives</h4>
+                <table>
+                    <tr>
+                        <th>Person</th>
+                        <th>M. sg.</th>
+                        <th>F. sg.</th>
+                        <th>M. pl.</th>
+                        <th>F. pl.</th>
+                    </tr>
+                    <tr>
+                        <td>1sg</td>
+                        <td><em>meu</em></td>
+                        <td><em>mea</em></td>
+                        <td><em>meus</em></td>
+                        <td><em>meas</em></td>
+                    </tr>
+                    <tr>
+                        <td>2sg</td>
+                        <td><em>teu</em></td>
+                        <td><em>tea</em></td>
+                        <td><em>teus</em></td>
+                        <td><em>teas</em></td>
+                    </tr>
+                    <tr>
+                        <td>3sg</td>
+                        <td><em>seu</em></td>
+                        <td><em>sea</em></td>
+                        <td><em>seus</em></td>
+                        <td><em>seas</em></td>
+                    </tr>
+                    <tr>
+                        <td>1pl</td>
+                        <td><em>nostru</em></td>
+                        <td><em>nostra</em></td>
+                        <td><em>nostrus</em></td>
+                        <td><em>nostras</em></td>
+                    </tr>
+                    <tr>
+                        <td>2pl</td>
+                        <td><em>vostru</em></td>
+                        <td><em>vostra</em></td>
+                        <td><em>vostrus</em></td>
+                        <td><em>vostras</em></td>
+                    </tr>
+                    <tr>
+                        <td>3pl</td>
+                        <td><em>su</em></td>
+                        <td><em>sua</em></td>
+                        <td><em>sus</em></td>
+                        <td><em>suas</em></td>
+                    </tr>
+                </table>
+            </div>
+
+            <button class="collapsible">Verbs</button>
+            <div class="collapsible-content">
+                <h4>Verb Classes</h4>
+                <table>
+                    <tr>
+                        <th>Class</th>
+                        <th>Infinitive</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <td>I</td>
+                        <td>-are</td>
+                        <td><em>kantare</em> "to sing"</td>
+                    </tr>
+                    <tr>
+                        <td>II</td>
+                        <td>-ere</td>
+                        <td><em>vedere</em> "to see"</td>
+                    </tr>
+                    <tr>
+                        <td>III</td>
+                        <td>-ire</td>
+                        <td><em>dormire</em> "to sleep"</td>
+                    </tr>
+                </table>
+
+                <h4>Present Tense: <em>kantare</em> "to sing"</h4>
+                <table>
+                    <tr>
+                        <th>Person</th>
+                        <th>Form</th>
+                    </tr>
+                    <tr><td>eu</td><td><em>kantu</em></td></tr>
+                    <tr><td>tu</td><td><em>kantas</em></td></tr>
+                    <tr><td>elu/ela</td><td><em>kanta</em></td></tr>
+                    <tr><td>nos</td><td><em>kantamu</em></td></tr>
+                    <tr><td>vos</td><td><em>kantats</em></td></tr>
+                    <tr><td>elus</td><td><em>kantan</em></td></tr>
+                </table>
+
+                <h4>Aspect System</h4>
+                <p>Kartadzinu is aspect-prominent, distinguishing:</p>
+                <ul>
+                    <li><strong>Perfective</strong> — Completed action: <em>Kantai una kantsone.</em> "I sang a song."</li>
+                    <li><strong>Imperfective</strong> — Ongoing/habitual: <em>Kantava kada dia.</em> "I used to sing every day."</li>
+                </ul>
+
+                <h4>Aspect Markers</h4>
+                <ul>
+                    <li><strong>ja</strong> — already, marks completed state: <em>Ja arrivau.</em> "He has already arrived."</li>
+                    <li><strong>aset</strong> — still, marks ongoing state: <em>Aset kerkamu.</em> "We're still seeking."</li>
+                    <li><strong>tra-</strong> — completive preverb: <em>tra-legere</em> "to read through"</li>
+                </ul>
+
+                <h4>Essere "to be"</h4>
+                <table>
+                    <tr>
+                        <th>Person</th>
+                        <th>Present</th>
+                        <th>Past</th>
+                    </tr>
+                    <tr><td>eu</td><td><em>so</em></td><td><em>fui</em></td></tr>
+                    <tr><td>tu</td><td><em>ses</em></td><td><em>fusti</em></td></tr>
+                    <tr><td>elu/ela</td><td><em>e</em></td><td><em>fue</em></td></tr>
+                    <tr><td>nos</td><td><em>semu</em></td><td><em>fuimu</em></td></tr>
+                    <tr><td>vos</td><td><em>sets</em></td><td><em>fuistis</em></td></tr>
+                    <tr><td>elus</td><td><em>son</em></td><td><em>fueru</em></td></tr>
+                </table>
+            </div>
+
+            <button class="collapsible">Word Order & Syntax</button>
+            <div class="collapsible-content">
+                <h4>Basic Word Order</h4>
+                <ul>
+                    <li><strong>SVO</strong> — Normal/informal: <em>Maria kanta una kantsone.</em></li>
+                    <li><strong>VSO</strong> — Narrative/formal: <em>Kantau Maria una kantsone.</em></li>
+                </ul>
+
+                <h4>Questions</h4>
+                <ul>
+                    <li>Intonation: <em>Tu venes?</em> "You're coming?"</li>
+                    <li>Optional particle <em>wa</em>: <em>Wa venes kon nos?</em> "Are you coming with us?"</li>
+                    <li>Question words: <em>ke</em> (what), <em>ki</em> (who), <em>onde</em> (where), <em>kandu</em> (when), <em>kom</em> (how), <em>porke</em> (why)</li>
+                </ul>
+
+                <h4>Cleft Constructions (Focus)</h4>
+                <p>Use <em>E...ke</em> pattern for emphasis:</p>
+                <div class="example">
+                    <div class="rumantsu">E Maria ke kantau.</div>
+                    <div class="english">"It was Maria who sang." (agent focus)</div>
+                </div>
+                <div class="example">
+                    <div class="rumantsu">E la kantsone ke Maria kantau.</div>
+                    <div class="english">"It was the song that Maria sang." (patient focus)</div>
+                </div>
+
+                <h4>Colloquial Contractions</h4>
+                <table>
+                    <tr>
+                        <th>Full Form</th>
+                        <th>Contraction</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr><td>de + lu</td><td><em>du</em></td><td><em>la kasa du rei</em></td></tr>
+                    <tr><td>de + la</td><td><em>dela</em></td><td><em>lu filu dela femina</em></td></tr>
+                    <tr><td>a + lu</td><td><em>al</em></td><td><em>vaju al merkatu</em></td></tr>
+                    <tr><td>a + la</td><td><em>ala</em></td><td><em>parla ala femina</em></td></tr>
+                    <tr><td>en + lu</td><td><em>nu</em></td><td><em>vive nu vilagu</em></td></tr>
+                    <tr><td>en + la</td><td><em>nela</em></td><td><em>e nela kasa</em></td></tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Vocabulary Section -->
+        <section id="vocabulary-preview">
+            <h2>Vocabulary Preview</h2>
+            <p style="margin-bottom: 1rem;"><a href="vocabulary.html" style="color: var(--primary); font-weight: bold;">→ View the complete searchable Vocabulary</a></p>
+
+            <div class="search-box">
+                <input type="text" id="vocab-search" placeholder="Search vocabulary..." onkeyup="filterVocab()">
+            </div>
+
+            <div class="letter-index">
+                <a href="#letter-a">A</a>
+                <a href="#letter-b">B</a>
+                <a href="#letter-c">C</a>
+                <a href="#letter-d">D</a>
+                <a href="#letter-e">E</a>
+                <a href="#letter-f">F</a>
+                <a href="#letter-g">G</a>
+                <a href="#letter-h">H</a>
+                <a href="#letter-i">I</a>
+                <a href="#letter-k">K</a>
+                <a href="#letter-l">L</a>
+                <a href="#letter-m">M</a>
+                <a href="#letter-n">N</a>
+                <a href="#letter-o">O</a>
+                <a href="#letter-p">P</a>
+                <a href="#letter-r">R</a>
+                <a href="#letter-s">S</a>
+                <a href="#letter-t">T</a>
+                <a href="#letter-u">U</a>
+                <a href="#letter-v">V</a>
+            </div>
+
+            <div id="vocab-list">
+                <h3 id="letter-a">A</h3>
+                <div class="dict-entry"><span class="headword">a</span> <span class="pronunciation">/a/</span> <span class="pos">prep.</span><div class="definition">to, toward; at</div></div>
+                <div class="dict-entry"><span class="headword">abandonare</span> <span class="pronunciation">/abandonare/</span> <span class="pos">v. I</span><div class="definition">to abandon, give up</div></div>
+                <div class="dict-entry"><span class="headword">abitare</span> <span class="pronunciation">/abitare/</span> <span class="pos">v. I</span><div class="definition">to dwell, live, inhabit</div></div>
+                <div class="dict-entry"><span class="headword">akwa</span> <span class="pronunciation">/akkwa/</span> <span class="pos">n. f.</span><div class="definition">water</div></div>
+                <div class="dict-entry"><span class="headword">altisimu</span> <span class="pronunciation">/altisimu/</span> <span class="pos">adj.</span><div class="definition">most high (divine epithet)</div></div>
+                <div class="dict-entry"><span class="headword">alzare</span> <span class="pronunciation">/alzare/</span> <span class="pos">v. I</span><div class="definition">to raise, lift up</div></div>
+                <div class="dict-entry"><span class="headword">aman</span> <span class="pronunciation">/aman/</span> <span class="pos">n. m.</span><div class="definition">sacred water (Berber loanword)</div></div>
+                <div class="dict-entry"><span class="headword">amare</span> <span class="pronunciation">/amare/</span> <span class="pos">v. I</span><div class="definition">to love</div></div>
+                <div class="dict-entry"><span class="headword">amiku</span> <span class="pronunciation">/amiku/</span> <span class="pos">n. m.</span><div class="definition">friend</div></div>
+                <div class="dict-entry"><span class="headword">amor</span> <span class="pronunciation">/amor/</span> <span class="pos">n. m.</span><div class="definition">love</div></div>
+                <div class="dict-entry"><span class="headword">an</span> <span class="pronunciation">/an/</span> <span class="pos">conj.</span><div class="definition">if, whether</div></div>
+                <div class="dict-entry"><span class="headword">anima</span> <span class="pronunciation">/anima/</span> <span class="pos">n. f.</span><div class="definition">soul, spirit</div></div>
+                <div class="dict-entry"><span class="headword">anjelu</span> <span class="pronunciation">/anzelu/</span> <span class="pos">n. m.</span><div class="definition">angel</div></div>
+                <div class="dict-entry"><span class="headword">anke</span> <span class="pronunciation">/anke/</span> <span class="pos">adv.</span><div class="definition">also, too</div></div>
+                <div class="dict-entry"><span class="headword">anno</span> <span class="pronunciation">/anno/</span> <span class="pos">n. m.</span><div class="definition">year</div></div>
+                <div class="dict-entry"><span class="headword">arboru</span> <span class="pronunciation">/arboru/</span> <span class="pos">n. m.</span><div class="definition">tree</div></div>
+                <div class="dict-entry"><span class="headword">aprendere</span> <span class="pronunciation">/aprendere/</span> <span class="pos">v. II</span><div class="definition">to learn</div></div>
+                <div class="dict-entry"><span class="headword">arrivare</span> <span class="pronunciation">/arrivare/</span> <span class="pos">v. I</span><div class="definition">to arrive</div></div>
+                <div class="dict-entry"><span class="headword">avante</span> <span class="pronunciation">/avante/</span> <span class="pos">adv.</span><div class="definition">forward, ahead</div></div>
+                <div class="dict-entry"><span class="headword">avere</span> <span class="pronunciation">/avere/</span> <span class="pos">v. II</span><div class="definition">to have</div></div>
+
+                <h3 id="letter-b">B</h3>
+                <div class="dict-entry"><span class="headword">barka</span> <span class="pronunciation">/barka/</span> <span class="pos">n. f.</span><div class="definition">boat</div></div>
+                <div class="dict-entry"><span class="headword">beatu</span> <span class="pronunciation">/beatu/</span> <span class="pos">adj.</span><div class="definition">blessed, happy</div></div>
+                <div class="dict-entry"><span class="headword">belu</span> <span class="pronunciation">/belu/</span> <span class="pos">adj.</span><div class="definition">beautiful, fair</div></div>
+                <div class="dict-entry"><span class="headword">ben</span> <span class="pronunciation">/ben/</span> <span class="pos">adv.</span><div class="definition">well</div></div>
+                <div class="dict-entry"><span class="headword">bevere</span> <span class="pronunciation">/bevere/</span> <span class="pos">v. II</span><div class="definition">to drink</div></div>
+                <div class="dict-entry"><span class="headword">blanku</span> <span class="pronunciation">/blanku/</span> <span class="pos">adj.</span><div class="definition">white</div></div>
+                <div class="dict-entry"><span class="headword">bonu</span> <span class="pronunciation">/bonu/</span> <span class="pos">adj.</span><div class="definition">good</div></div>
+                <div class="dict-entry"><span class="headword">bratsu</span> <span class="pronunciation">/bratsu/</span> <span class="pos">n. m.</span><div class="definition">arm</div></div>
+                <div class="dict-entry"><span class="headword">bukka</span> <span class="pronunciation">/bukka/</span> <span class="pos">n. f.</span><div class="definition">mouth</div></div>
+
+                <h3 id="letter-c">C</h3>
+                <div class="dict-entry"><span class="headword">kelu</span> <span class="pronunciation">/kelu/</span> <span class="pos">n. m.</span><div class="definition">sky, heaven</div></div>
+                <div class="dict-entry"><span class="headword">kena</span> <span class="pronunciation">/kena/</span> <span class="pos">n. f.</span><div class="definition">dinner, supper</div></div>
+                <div class="dict-entry"><span class="headword">kivitate</span> <span class="pronunciation">/kivitate/</span> <span class="pos">n. f.</span><div class="definition">city</div></div>
+                <div class="dict-entry"><span class="headword">klamare</span> <span class="pronunciation">/klamare/</span> <span class="pos">v. I</span><div class="definition">to cry out, call</div></div>
+                <div class="dict-entry"><span class="headword">kredere</span> <span class="pronunciation">/kredere/</span> <span class="pos">v. II</span><div class="definition">to believe</div></div>
+                <div class="dict-entry"><span class="headword">kursare</span> <span class="pronunciation">/kursare/</span> <span class="pos">v. I</span><div class="definition">to run</div></div>
+
+                <h3 id="letter-d">D</h3>
+                <div class="dict-entry"><span class="headword">dare</span> <span class="pronunciation">/dare/</span> <span class="pos">v. I</span><div class="definition">to give</div></div>
+                <div class="dict-entry"><span class="headword">de</span> <span class="pronunciation">/de/</span> <span class="pos">prep.</span><div class="definition">of, from</div></div>
+                <div class="dict-entry"><span class="headword">deshendere</span> <span class="pronunciation">/deshendere/</span> <span class="pos">v. II</span><div class="definition">to descend</div></div>
+                <div class="dict-entry"><span class="headword">destru</span> <span class="pronunciation">/destru/</span> <span class="pos">adj.</span><div class="definition">right (side)</div></div>
+                <div class="dict-entry"><span class="headword">Déu</span> <span class="pronunciation">/déu/</span> <span class="pos">n. m.</span><div class="definition">God</div></div>
+                <div class="dict-entry"><span class="headword">dia</span> <span class="pronunciation">/dia/</span> <span class="pos">n. m.</span><div class="definition">day</div></div>
+                <div class="dict-entry"><span class="headword">dire</span> <span class="pronunciation">/dire/</span> <span class="pos">v. III</span><div class="definition">to say, tell</div></div>
+                <div class="dict-entry"><span class="headword">dolóru</span> <span class="pronunciation">/dolóru/</span> <span class="pos">n. m.</span><div class="definition">pain, sorrow</div></div>
+                <div class="dict-entry"><span class="headword">dómo</span> <span class="pronunciation">/dómo/</span> <span class="pos">n. f.</span><div class="definition">house, home</div></div>
+                <div class="dict-entry"><span class="headword">Dóminu</span> <span class="pronunciation">/dóminu/</span> <span class="pos">n. m.</span><div class="definition">Lord</div></div>
+                <div class="dict-entry"><span class="headword">dormire</span> <span class="pronunciation">/dormire/</span> <span class="pos">v. III</span><div class="definition">to sleep</div></div>
+
+                <h3 id="letter-e">E</h3>
+                <div class="dict-entry"><span class="headword">e</span> <span class="pronunciation">/e/</span> <span class="pos">conj.</span><div class="definition">and</div></div>
+                <div class="dict-entry"><span class="headword">ela</span> <span class="pronunciation">/ela/</span> <span class="pos">pron.</span><div class="definition">she, her</div></div>
+                <div class="dict-entry"><span class="headword">elu</span> <span class="pronunciation">/elu/</span> <span class="pos">pron.</span><div class="definition">he, him</div></div>
+                <div class="dict-entry"><span class="headword">en</span> <span class="pronunciation">/en/</span> <span class="pos">prep.</span><div class="definition">in</div></div>
+                <div class="dict-entry"><span class="headword">essere</span> <span class="pronunciation">/essere/</span> <span class="pos">v. II</span><div class="definition">to be</div></div>
+                <div class="dict-entry"><span class="headword">eu</span> <span class="pronunciation">/eu/</span> <span class="pos">pron.</span><div class="definition">I</div></div>
+                <div class="dict-entry"><span class="headword">ekstendere</span> <span class="pronunciation">/ekstendere/</span> <span class="pos">v. II</span><div class="definition">to extend, stretch</div></div>
+                <div class="dict-entry"><span class="headword">ekstensione</span> <span class="pronunciation">/ekstensione/</span> <span class="pos">n. f.</span><div class="definition">extension</div></div>
+
+                <h3 id="letter-f">F</h3>
+                <div class="dict-entry"><span class="headword">familia</span> <span class="pronunciation">/familia/</span> <span class="pos">n. f.</span><div class="definition">family</div></div>
+                <div class="dict-entry"><span class="headword">fare</span> <span class="pronunciation">/fare/</span> <span class="pos">v. I</span><div class="definition">to do, make</div></div>
+                <div class="dict-entry"><span class="headword">fatsa</span> <span class="pronunciation">/fatsa/</span> <span class="pos">n. f.</span><div class="definition">face</div></div>
+                <div class="dict-entry"><span class="headword">femina</span> <span class="pronunciation">/femina/</span> <span class="pos">n. f.</span><div class="definition">woman</div></div>
+                <div class="dict-entry"><span class="headword">fendere</span> <span class="pronunciation">/fendere/</span> <span class="pos">v. II</span><div class="definition">to cleave, split</div></div>
+                <div class="dict-entry"><span class="headword">filu</span> <span class="pronunciation">/filu/</span> <span class="pos">n. m.</span><div class="definition">son</div></div>
+                <div class="dict-entry"><span class="headword">flora</span> <span class="pronunciation">/flora/</span> <span class="pos">n. f.</span><div class="definition">flower</div></div>
+                <div class="dict-entry"><span class="headword">foku</span> <span class="pronunciation">/foku/</span> <span class="pos">n. m.</span><div class="definition">fire</div></div>
+                <div class="dict-entry"><span class="headword">fonte</span> <span class="pronunciation">/fonte/</span> <span class="pos">n. f.</span><div class="definition">fountain, spring</div></div>
+                <div class="dict-entry"><span class="headword">forte</span> <span class="pronunciation">/forte/</span> <span class="pos">adj.</span><div class="definition">strong</div></div>
+                <div class="dict-entry"><span class="headword">frakasare</span> <span class="pronunciation">/frakasare/</span> <span class="pos">v. I</span><div class="definition">to shatter</div></div>
+                <div class="dict-entry"><span class="headword">fratru</span> <span class="pronunciation">/fratru/</span> <span class="pos">n. m.</span><div class="definition">brother</div></div>
+                <div class="dict-entry"><span class="headword">fruktu</span> <span class="pronunciation">/fruktu/</span> <span class="pos">n. m.</span><div class="definition">fruit</div></div>
+
+                <h3 id="letter-g">G</h3>
+                <div class="dict-entry"><span class="headword">gente</span> <span class="pronunciation">/gente/</span> <span class="pos">n. f.</span><div class="definition">people</div></div>
+                <div class="dict-entry"><span class="headword">glória</span> <span class="pronunciation">/glória/</span> <span class="pos">n. f.</span><div class="definition">glory</div></div>
+                <div class="dict-entry"><span class="headword">granda</span> <span class="pronunciation">/granda/</span> <span class="pos">adj.</span><div class="definition">big, great (f.)</div></div>
+                <div class="dict-entry"><span class="headword">gratsia</span> <span class="pronunciation">/gratsia/</span> <span class="pos">n. f.</span><div class="definition">grace; thank you</div></div>
+                <div class="dict-entry"><span class="headword">girare</span> <span class="pronunciation">/girare/</span> <span class="pos">v. I</span><div class="definition">to turn, rotate</div></div>
+                <div class="dict-entry"><span class="headword">goia</span> <span class="pronunciation">/goja/</span> <span class="pos">n. f.</span><div class="definition">joy</div></div>
+                <div class="dict-entry"><span class="headword">gugu</span> <span class="pronunciation">/gugu/</span> <span class="pos">n. m.</span><div class="definition">yoke</div></div>
+                <div class="dict-entry"><span class="headword">gustitsja</span> <span class="pronunciation">/gustitsja/</span> <span class="pos">n. f.</span><div class="definition">righteousness, justice</div></div>
+
+                <h3 id="letter-h">H</h3>
+                <div class="dict-entry"><span class="headword">harpa</span> <span class="pronunciation">/harpa/</span> <span class="pos">n. f.</span><div class="definition">harp</div></div>
+                <div class="dict-entry"><span class="headword">honóru</span> <span class="pronunciation">/honóru/</span> <span class="pos">n. m.</span><div class="definition">honor</div></div>
+
+                <h3 id="letter-i">I</h3>
+                <div class="dict-entry"><span class="headword">iki</span> <span class="pronunciation">/iki/</span> <span class="pos">adv.</span><div class="definition">here</div></div>
+                <div class="dict-entry"><span class="headword">ili</span> <span class="pronunciation">/ili/</span> <span class="pos">adv.</span><div class="definition">there</div></div>
+                <div class="dict-entry"><span class="headword">inebriare</span> <span class="pronunciation">/inebriare/</span> <span class="pos">v. I</span><div class="definition">to intoxicate</div></div>
+                <div class="dict-entry"><span class="headword">ire</span> <span class="pronunciation">/ire/</span> <span class="pos">v. III</span><div class="definition">to go</div></div>
+                <div class="dict-entry"><span class="headword">istu</span> <span class="pronunciation">/istu/</span> <span class="pos">pron.</span><div class="definition">this</div></div>
+
+                <h3 id="letter-k">K</h3>
+                <div class="dict-entry"><span class="headword">kada</span> <span class="pronunciation">/kada/</span> <span class="pos">adj.</span><div class="definition">each, every</div></div>
+                <div class="dict-entry"><span class="headword">kamera</span> <span class="pronunciation">/kamera/</span> <span class="pos">n. f.</span><div class="definition">chamber, room</div></div>
+                <div class="dict-entry"><span class="headword">kantare</span> <span class="pronunciation">/kantare/</span> <span class="pos">v. I</span><div class="definition">to sing</div></div>
+                <div class="dict-entry"><span class="headword">kapu</span> <span class="pronunciation">/kapu/</span> <span class="pos">n. m.</span><div class="definition">head</div></div>
+                <div class="dict-entry"><span class="headword">kasa</span> <span class="pronunciation">/kasa/</span> <span class="pos">n. f.</span><div class="definition">house</div></div>
+                <div class="dict-entry"><span class="headword">ke</span> <span class="pronunciation">/ke/</span> <span class="pos">pron./conj.</span><div class="definition">what; that; who/which</div></div>
+                <div class="dict-entry"><span class="headword">kerkare</span> <span class="pronunciation">/kerkare/</span> <span class="pos">v. I</span><div class="definition">to seek, search</div></div>
+                <div class="dict-entry"><span class="headword">konesere</span> <span class="pronunciation">/konesere/</span> <span class="pos">v. II</span><div class="definition">to know (person/place)</div></div>
+                <div class="dict-entry"><span class="headword">kongregatsione</span> <span class="pronunciation">/kongregatsione/</span> <span class="pos">n. f.</span><div class="definition">congregation</div></div>
+                <div class="dict-entry"><span class="headword">konjitsione</span> <span class="pronunciation">/konjitsione/</span> <span class="pos">n. f.</span><div class="definition">knowledge (experiential)</div></div>
+                <div class="dict-entry"><span class="headword">kon</span> <span class="pronunciation">/kon/</span> <span class="pos">prep.</span><div class="definition">with</div></div>
+                <div class="dict-entry"><span class="headword">korda</span> <span class="pronunciation">/korda/</span> <span class="pos">n. f.</span><div class="definition">string (of instrument)</div></div>
+                <div class="dict-entry"><span class="headword">koru</span> <span class="pronunciation">/koru/</span> <span class="pos">n. m.</span><div class="definition">heart</div></div>
+                <div class="dict-entry"><span class="headword">krutse</span> <span class="pronunciation">/krutse/</span> <span class="pos">n. f.</span><div class="definition">cross</div></div>
+
+                <h3 id="letter-l">L</h3>
+                <div class="dict-entry"><span class="headword">la</span> <span class="pronunciation">/la/</span> <span class="pos">art.</span><div class="definition">the (f. sg.)</div></div>
+                <div class="dict-entry"><span class="headword">labia</span> <span class="pronunciation">/labia/</span> <span class="pos">n. f.</span><div class="definition">lip</div></div>
+                <div class="dict-entry"><span class="headword">lakta</span> <span class="pronunciation">/lakta/</span> <span class="pos">n. m.</span><div class="definition">milk</div></div>
+                <div class="dict-entry"><span class="headword">laude</span> <span class="pronunciation">/laude/</span> <span class="pos">n. f.</span><div class="definition">praise</div></div>
+                <div class="dict-entry"><span class="headword">libru</span> <span class="pronunciation">/libru/</span> <span class="pos">n. m.</span><div class="definition">book</div></div>
+                <div class="dict-entry"><span class="headword">lingua</span> <span class="pronunciation">/lingua/</span> <span class="pos">n. f.</span><div class="definition">language, tongue</div></div>
+                <div class="dict-entry"><span class="headword">lu</span> <span class="pronunciation">/lu/</span> <span class="pos">art.</span><div class="definition">the (m. sg.)</div></div>
+                <div class="dict-entry"><span class="headword">luna</span> <span class="pronunciation">/luna/</span> <span class="pos">n. f.</span><div class="definition">moon</div></div>
+                <div class="dict-entry"><span class="headword">luts</span> <span class="pronunciation">/luts/</span> <span class="pos">n. f.</span><div class="definition">light</div></div>
+
+                <h3 id="letter-m">M</h3>
+                <div class="dict-entry"><span class="headword">ma</span> <span class="pronunciation">/ma/</span> <span class="pos">conj.</span><div class="definition">but</div></div>
+                <div class="dict-entry"><span class="headword">mamela</span> <span class="pronunciation">/mamela/</span> <span class="pos">n. f.</span><div class="definition">breast</div></div>
+                <div class="dict-entry"><span class="headword">mandzare</span> <span class="pronunciation">/mandzare/</span> <span class="pos">v. I</span><div class="definition">to eat</div></div>
+                <div class="dict-entry"><span class="headword">manifestatsione</span> <span class="pronunciation">/manifestatsione/</span> <span class="pos">n. f.</span><div class="definition">manifestation</div></div>
+                <div class="dict-entry"><span class="headword">manu</span> <span class="pronunciation">/manu/</span> <span class="pos">n. f.</span><div class="definition">hand</div></div>
+                <div class="dict-entry"><span class="headword">mele</span> <span class="pronunciation">/mele/</span> <span class="pos">n. m.</span><div class="definition">honey</div></div>
+                <div class="dict-entry"><span class="headword">mar</span> <span class="pronunciation">/mar/</span> <span class="pos">n. m.</span><div class="definition">sea</div></div>
+                <div class="dict-entry"><span class="headword">matri</span> <span class="pronunciation">/matri/</span> <span class="pos">n. f.</span><div class="definition">mother</div></div>
+                <div class="dict-entry"><span class="headword">me</span> <span class="pronunciation">/me/</span> <span class="pos">pron.</span><div class="definition">me</div></div>
+                <div class="dict-entry"><span class="headword">morire</span> <span class="pronunciation">/morire/</span> <span class="pos">v. III</span><div class="definition">to die</div></div>
+                <div class="dict-entry"><span class="headword">morte</span> <span class="pronunciation">/morte/</span> <span class="pos">n. f.</span><div class="definition">death</div></div>
+                <div class="dict-entry"><span class="headword">mundu</span> <span class="pronunciation">/mundu/</span> <span class="pos">n. m.</span><div class="definition">world</div></div>
+
+                <h3 id="letter-n">N</h3>
+                <div class="dict-entry"><span class="headword">nóme</span> <span class="pronunciation">/nóme/</span> <span class="pos">n. m.</span><div class="definition">name</div></div>
+                <div class="dict-entry"><span class="headword">non</span> <span class="pronunciation">/non/</span> <span class="pos">adv.</span><div class="definition">not</div></div>
+                <div class="dict-entry"><span class="headword">nós</span> <span class="pronunciation">/nós/</span> <span class="pos">pron.</span><div class="definition">we, us (exclusive)</div></div>
+                <div class="dict-entry"><span class="headword">nósin</span> <span class="pronunciation">/nósin/</span> <span class="pos">pron.</span><div class="definition">we, us (inclusive)</div></div>
+                <div class="dict-entry"><span class="headword">note</span> <span class="pronunciation">/note/</span> <span class="pos">n. f.</span><div class="definition">night</div></div>
+
+                <h3 id="letter-o">O</h3>
+                <div class="dict-entry"><span class="headword">odire</span> <span class="pronunciation">/odire/</span> <span class="pos">v. III</span><div class="definition">to hear</div></div>
+                <div class="dict-entry"><span class="headword">oferta</span> <span class="pronunciation">/oferta/</span> <span class="pos">n. f.</span><div class="definition">offering</div></div>
+                <div class="dict-entry"><span class="headword">okulu</span> <span class="pronunciation">/okulu/</span> <span class="pos">n. m.</span><div class="definition">eye</div></div>
+                <div class="dict-entry"><span class="headword">omu</span> <span class="pronunciation">/omu/</span> <span class="pos">n. m.</span><div class="definition">man, person</div></div>
+                <div class="dict-entry"><span class="headword">onde</span> <span class="pronunciation">/onde/</span> <span class="pos">adv.</span><div class="definition">where</div></div>
+                <div class="dict-entry"><span class="headword">ora</span> <span class="pronunciation">/ora/</span> <span class="pos">adv.</span><div class="definition">now</div></div>
+
+                <h3 id="letter-p">P</h3>
+                <div class="dict-entry"><span class="headword">paktu</span> <span class="pronunciation">/paktu/</span> <span class="pos">n. m.</span><div class="definition">pact, agreement</div></div>
+                <div class="dict-entry"><span class="headword">pane</span> <span class="pronunciation">/pane/</span> <span class="pos">n. m.</span><div class="definition">bread</div></div>
+                <div class="dict-entry"><span class="headword">parabula</span> <span class="pronunciation">/parabula/</span> <span class="pos">n. f.</span><div class="definition">word (divine speech)</div></div>
+                <div class="dict-entry"><span class="headword">parlare</span> <span class="pronunciation">/parlare/</span> <span class="pos">v. I</span><div class="definition">to speak</div></div>
+                <div class="dict-entry"><span class="headword">patre</span> <span class="pronunciation">/patre/</span> <span class="pos">n. m.</span><div class="definition">father</div></div>
+                <div class="dict-entry"><span class="headword">perla</span> <span class="pronunciation">/perla/</span> <span class="pos">n. f.</span><div class="definition">pearl</div></div>
+                <div class="dict-entry"><span class="headword">pats</span> <span class="pronunciation">/pats/</span> <span class="pos">n. f.</span><div class="definition">peace</div></div>
+                <div class="dict-entry"><span class="headword">pe</span> <span class="pronunciation">/pe/</span> <span class="pos">n. m.</span><div class="definition">foot</div></div>
+                <div class="dict-entry"><span class="headword">per</span> <span class="pronunciation">/per/</span> <span class="pos">prep.</span><div class="definition">by, through</div></div>
+                <div class="dict-entry"><span class="headword">petra</span> <span class="pronunciation">/petra/</span> <span class="pos">n. f.</span><div class="definition">stone, rock</div></div>
+                <div class="dict-entry"><span class="headword">plenare</span> <span class="pronunciation">/plenare/</span> <span class="pos">v. I</span><div class="definition">to fill</div></div>
+                <div class="dict-entry"><span class="headword">podere</span> <span class="pronunciation">/podere/</span> <span class="pos">v. II</span><div class="definition">can, to be able</div></div>
+                <div class="dict-entry"><span class="headword">por</span> <span class="pronunciation">/por/</span> <span class="pos">prep.</span><div class="definition">for</div></div>
+                <div class="dict-entry"><span class="headword">potensa</span> <span class="pronunciation">/potensa/</span> <span class="pos">n. f.</span><div class="definition">power</div></div>
+                <div class="dict-entry"><span class="headword">porke</span> <span class="pronunciation">/porke/</span> <span class="pos">conj.</span><div class="definition">because; why</div></div>
+                <div class="dict-entry"><span class="headword">prendre</span> <span class="pronunciation">/prendre/</span> <span class="pos">v. II</span><div class="definition">to take</div></div>
+
+                <h3 id="letter-r">R</h3>
+                <div class="dict-entry"><span class="headword">rei</span> <span class="pronunciation">/rei/</span> <span class="pos">n. m.</span><div class="definition">king</div></div>
+                <div class="dict-entry"><span class="headword">retsebere</span> <span class="pronunciation">/retsebere/</span> <span class="pos">v. II</span><div class="definition">to receive</div></div>
+                <div class="dict-entry"><span class="headword">reposu</span> <span class="pronunciation">/reposu/</span> <span class="pos">n. m.</span><div class="definition">rest</div></div>
+                <div class="dict-entry"><span class="headword">roba</span> <span class="pronunciation">/roba/</span> <span class="pos">n. f.</span><div class="definition">robe, garment</div></div>
+                <div class="dict-entry"><span class="headword">rosa</span> <span class="pronunciation">/rosa/</span> <span class="pos">n. f.</span><div class="definition">rose</div></div>
+
+                <h3 id="letter-s">S</h3>
+                <div class="dict-entry"><span class="headword">salvatsione</span> <span class="pronunciation">/salvatsione/</span> <span class="pos">n. f.</span><div class="definition">salvation</div></div>
+                <div class="dict-entry"><span class="headword">sapere</span> <span class="pronunciation">/sapere/</span> <span class="pos">v. II</span><div class="definition">to know by experience</div></div>
+                <div class="dict-entry"><span class="headword">sapiensa</span> <span class="pronunciation">/sapiensa/</span> <span class="pos">n. f.</span><div class="definition">wisdom</div></div>
+                <div class="dict-entry"><span class="headword">se</span> <span class="pronunciation">/se/</span> <span class="pos">conj.</span><div class="definition">if</div></div>
+                <div class="dict-entry"><span class="headword">seda</span> <span class="pronunciation">/seda/</span> <span class="pos">n. f.</span><div class="definition">silk</div></div>
+                <div class="dict-entry"><span class="headword">serpente</span> <span class="pronunciation">/serpente/</span> <span class="pos">n. m.</span><div class="definition">serpent, snake</div></div>
+                <div class="dict-entry"><span class="headword">sinu</span> <span class="pronunciation">/sinu/</span> <span class="pos">n. m.</span><div class="definition">bosom</div></div>
+                <div class="dict-entry"><span class="headword">sól</span> <span class="pronunciation">/sól/</span> <span class="pos">n. m.</span><div class="definition">sun</div></div>
+                <div class="dict-entry"><span class="headword">sora</span> <span class="pronunciation">/sora/</span> <span class="pos">n. f.</span><div class="definition">sister</div></div>
+                <div class="dict-entry"><span class="headword">spósa</span> <span class="pronunciation">/spósa/</span> <span class="pos">n. f.</span><div class="definition">bride</div></div>
+                <div class="dict-entry"><span class="headword">spósu</span> <span class="pronunciation">/spósu/</span> <span class="pos">n. m.</span><div class="definition">bridegroom</div></div>
+                <div class="dict-entry"><span class="headword">Spiritu</span> <span class="pronunciation">/spiritu/</span> <span class="pos">n. m.</span><div class="definition">spirit</div></div>
+                <div class="dict-entry"><span class="headword">stella</span> <span class="pronunciation">/stella/</span> <span class="pos">n. f.</span><div class="definition">star</div></div>
+                <div class="dict-entry"><span class="headword">surgere</span> <span class="pronunciation">/surgere/</span> <span class="pos">v. II</span><div class="definition">to rise, arise</div></div>
+
+                <h3 id="letter-t">T</h3>
+                <div class="dict-entry"><span class="headword">te</span> <span class="pronunciation">/te/</span> <span class="pos">pron.</span><div class="definition">you (object)</div></div>
+                <div class="dict-entry"><span class="headword">teksere</span> <span class="pronunciation">/teksere/</span> <span class="pos">v. II</span><div class="definition">to weave</div></div>
+                <div class="dict-entry"><span class="headword">tempu</span> <span class="pronunciation">/tempu/</span> <span class="pos">n. m.</span><div class="definition">time</div></div>
+                <div class="dict-entry"><span class="headword">terra</span> <span class="pronunciation">/terra/</span> <span class="pos">n. f.</span><div class="definition">land, earth</div></div>
+                <div class="dict-entry"><span class="headword">tesoru</span> <span class="pronunciation">/tesoru/</span> <span class="pos">n. m.</span><div class="definition">treasure</div></div>
+                <div class="dict-entry"><span class="headword">trovare</span> <span class="pronunciation">/trovare/</span> <span class="pos">v. I</span><div class="definition">to find</div></div>
+                <div class="dict-entry"><span class="headword">tu</span> <span class="pronunciation">/tu/</span> <span class="pos">pron.</span><div class="definition">you (subject)</div></div>
+                <div class="dict-entry"><span class="headword">turnare</span> <span class="pronunciation">/turnare/</span> <span class="pos">v. I</span><div class="definition">to turn, return</div></div>
+
+                <h3 id="letter-u">U</h3>
+                <div class="dict-entry"><span class="headword">un</span> <span class="pronunciation">/un/</span> <span class="pos">art.</span><div class="definition">a, an (m.)</div></div>
+                <div class="dict-entry"><span class="headword">una</span> <span class="pronunciation">/una/</span> <span class="pos">art.</span><div class="definition">a, an (f.); one</div></div>
+                <div class="dict-entry"><span class="headword">uteru</span> <span class="pronunciation">/uteru/</span> <span class="pos">n. m.</span><div class="definition">womb</div></div>
+
+                <h3 id="letter-v">V</h3>
+                <div class="dict-entry"><span class="headword">vedere</span> <span class="pronunciation">/vedere/</span> <span class="pos">v. II</span><div class="definition">to see</div></div>
+                <div class="dict-entry"><span class="headword">venire</span> <span class="pronunciation">/venire/</span> <span class="pos">v. III</span><div class="definition">to come</div></div>
+                <div class="dict-entry"><span class="headword">ventu</span> <span class="pronunciation">/ventu/</span> <span class="pos">n. m.</span><div class="definition">wind</div></div>
+                <div class="dict-entry"><span class="headword">veritate</span> <span class="pronunciation">/veritate/</span> <span class="pos">n. f.</span><div class="definition">truth</div></div>
+                <div class="dict-entry"><span class="headword">vestimentu</span> <span class="pronunciation">/vestimentu/</span> <span class="pos">n. m.</span><div class="definition">garment, clothing</div></div>
+                <div class="dict-entry"><span class="headword">via</span> <span class="pronunciation">/via/</span> <span class="pos">n. f.</span><div class="definition">road, way, path</div></div>
+                <div class="dict-entry"><span class="headword">viljansa</span> <span class="pronunciation">/viljansa/</span> <span class="pos">n. f.</span><div class="definition">watchfulness</div></div>
+                <div class="dict-entry"><span class="headword">virgine</span> <span class="pronunciation">/virgine/</span> <span class="pos">n. f.</span><div class="definition">virgin</div></div>
+                <div class="dict-entry"><span class="headword">vita</span> <span class="pronunciation">/vita/</span> <span class="pos">n. f.</span><div class="definition">life</div></div>
+                <div class="dict-entry"><span class="headword">vivere</span> <span class="pronunciation">/vivere/</span> <span class="pos">v. II</span><div class="definition">to live</div></div>
+                <div class="dict-entry"><span class="headword">volere</span> <span class="pronunciation">/volere/</span> <span class="pos">v. II</span><div class="definition">to want</div></div>
+                <div class="dict-entry"><span class="headword">volontate</span> <span class="pronunciation">/volontate/</span> <span class="pos">n. f.</span><div class="definition">will, volition</div></div>
+                <div class="dict-entry"><span class="headword">vos</span> <span class="pronunciation">/vos/</span> <span class="pos">pron.</span><div class="definition">you (pl.)</div></div>
+            </div>
+
+            <p style="margin-top: 2rem; text-align: center; color: var(--text-light);">
+                <em>Full dictionary contains ~700 headwords. See reference/vocabulary.md for complete entries.</em>
+            </p>
+        </section>
+
+        <!-- Translations Section - Now links to Library -->
+        <section id="translations-preview">
+            <h2>Translations</h2>
+            <p>Kartadzinu translations showcase the language's distinctive features: aspect system, VSO word order, construct state, and more.</p>
+            <p style="margin: 1.5rem 0;"><a href="library.html" style="color: var(--primary); font-weight: bold; font-size: 1.1rem;">→ Visit the Library for all translations</a></p>
+
+            <h3>Available Translations</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">
+                    <a href="translations/conlang_benchmarks.html" style="color: var(--secondary);">Conlang Benchmark Texts</a>
+                    <span style="color: var(--text-light);"> — North Wind & Sun, Schleicher's Fable, Hobbit, Tower of Babel</span>
+                </li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">
+                    <a href="translations/romeo_juliet.html" style="color: var(--secondary);">Romeo and Juliet: Balcony Scene</a>
+                    <span style="color: var(--text-light);"> — Shakespeare's iconic romantic dialogue</span>
+                </li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">
+                    <a href="translations/hymn_of_pearl.html" style="color: var(--secondary);">The Hymn of the Pearl</a>
+                    <span style="color: var(--text-light);"> — Gnostic narrative poem from the Acts of Thomas</span>
+                </li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">
+                    <a href="translations/thunder_perfect_mind.html" style="color: var(--secondary);">Thunder, Perfect Mind</a>
+                    <span style="color: var(--text-light);"> — Mysterious revelation from Nag Hammadi</span>
+                </li>
+                <li style="padding: 0.5rem 0;">
+                    <a href="translations/odes_of_solomon.html" style="color: var(--secondary);">Odes of Solomon (Selected)</a>
+                    <span style="color: var(--text-light);"> — Early Christian/Gnostic hymns</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Old translations removed, see library.html and translations/*.html -->
+        <!-- Common Phrases Section -->
+        <section id="phrases">
+            <h2>Common Phrases</h2>
+
+            <h3>Greetings</h3>
+            <table>
+                <tr><th>Kartadzinu</th><th>English</th></tr>
+                <tr><td><em>Bona vja!</em></td><td>Hello!</td></tr>
+                <tr><td><em>Kom stas?</em></td><td>How are you?</td></tr>
+                <tr><td><em>So ben, gratsia.</em></td><td>I'm well, thank you.</td></tr>
+                <tr><td><em>Bona matinu.</em></td><td>Good morning.</td></tr>
+                <tr><td><em>Bona note.</em></td><td>Good night.</td></tr>
+                <tr><td><em>Fina alora.</em></td><td>Goodbye.</td></tr>
+                <tr><td><em>Pats a te.</em></td><td>Peace to you.</td></tr>
+            </table>
+
+            <h3>Essentials</h3>
+            <table>
+                <tr><th>Kartadzinu</th><th>English</th></tr>
+                <tr><td><em>Por favor.</em></td><td>Please.</td></tr>
+                <tr><td><em>Gratsia.</em></td><td>Thank you.</td></tr>
+                <tr><td><em>Eskusa.</em></td><td>Excuse me.</td></tr>
+                <tr><td><em>Si.</em></td><td>Yes.</td></tr>
+                <tr><td><em>Non.</em></td><td>No.</td></tr>
+                <tr><td><em>Non komprendo.</em></td><td>I don't understand.</td></tr>
+                <tr><td><em>Parlas Kartadzinu?</em></td><td>Do you speak Kartadzinu?</td></tr>
+            </table>
+
+            <h3>Questions</h3>
+            <table>
+                <tr><th>Kartadzinu</th><th>English</th></tr>
+                <tr><td><em>Ke e istu?</em></td><td>What is this?</td></tr>
+                <tr><td><em>Onde vives?</em></td><td>Where do you live?</td></tr>
+                <tr><td><em>Kom te klamas?</em></td><td>What's your name?</td></tr>
+                <tr><td><em>Me klamu...</em></td><td>My name is...</td></tr>
+                <tr><td><em>Wa podes ajudare me?</em></td><td>Can you help me?</td></tr>
+                <tr><td><em>Kom se dise...?</em></td><td>How do you say...?</td></tr>
+            </table>
+
+            <h3>Numbers</h3>
+            <table>
+                <tr><th>Number</th><th>Kartadzinu</th></tr>
+                <tr><td>1</td><td><em>unu</em></td></tr>
+                <tr><td>2</td><td><em>du / doi</em></td></tr>
+                <tr><td>3</td><td><em>tres</em></td></tr>
+                <tr><td>4</td><td><em>kwatru</em></td></tr>
+                <tr><td>5</td><td><em>kinke</em></td></tr>
+                <tr><td>6</td><td><em>ses</em></td></tr>
+                <tr><td>7</td><td><em>sete</em></td></tr>
+                <tr><td>8</td><td><em>oto</em></td></tr>
+                <tr><td>9</td><td><em>nove</em></td></tr>
+                <tr><td>10</td><td><em>dese</em></td></tr>
+                <tr><td>20</td><td><em>vinti</em></td></tr>
+                <tr><td>100</td><td><em>tsentu</em></td></tr>
+                <tr><td>1000</td><td><em>mile</em></td></tr>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>Kartadzinu Constructed Language Project</strong></p>
+        <p>Version 3.0 — November 2025</p>
+        <p>Full reference materials available in the project's <code>reference/</code> and <code>translations/</code> directories.</p>
+    </footer>
+
+    <script>
+        // Collapsible sections
+        document.querySelectorAll('.collapsible').forEach(button => {
+            button.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                content.classList.toggle('show');
+            });
+        });
+
+        // Vocabulary search
+        function filterVocab() {
+            const query = document.getElementById('vocab-search').value.toLowerCase();
+            const entries = document.querySelectorAll('.dict-entry');
+
+            entries.forEach(entry => {
+                const text = entry.textContent.toLowerCase();
+                entry.style.display = text.includes(query) ? '' : 'none';
+            });
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Highlight active nav item on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

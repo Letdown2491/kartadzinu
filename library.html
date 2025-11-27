@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library - Kartadzinu</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">Kartadzinu</a></h1>
+        <p class="subtitle">Biblioteca de Traduktsiones</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="grammar/index.html">Grammar</a></li>
+            <li><a href="vocabulary.html">Vocabulary</a></li>
+            <li><a href="library.html" class="active">Library</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Translation Library</h2>
+            <p>Bilingual texts showcasing Kartadzinu's expressive range. Each translation demonstrates different features of the language, from mystical poetry to dramatic dialogue.</p>
+
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all">All Texts</button>
+                <button class="filter-btn" data-filter="religious">Religious/Mystical</button>
+                <button class="filter-btn" data-filter="literary">Literary</button>
+                <button class="filter-btn" data-filter="benchmark">Conlang Benchmarks</button>
+            </div>
+        </section>
+
+        <div class="translation-grid">
+            <!-- Hymn of the Pearl -->
+            <div class="translation-card" data-category="religious">
+                <h4><a href="translations/hymn_of_pearl.html">Imnu de la Perla</a></h4>
+                <p class="meta">The Hymn of the Pearl | 2nd-3rd century CE</p>
+                <p class="description">A Gnostic allegory from the Acts of Thomas. A prince journeys to Egypt to retrieve a pearl guarded by a serpent—the soul's descent into matter and awakening to its divine origin.</p>
+                <div class="tags">
+                    <span class="tag">Gnostic</span>
+                    <span class="tag">Syriac</span>
+                    <span class="tag feature">Construct State</span>
+                    <span class="tag feature">VSO Narrative</span>
+                </div>
+            </div>
+
+            <!-- Thunder, Perfect Mind -->
+            <div class="translation-card" data-category="religious">
+                <h4><a href="translations/thunder_perfect_mind.html">Lu Tronu, Mente Perfeta</a></h4>
+                <p class="meta">The Thunder, Perfect Mind | Nag Hammadi Library</p>
+                <p class="description">A feminine divine voice speaks in paradoxes: "I am the honored one and the scorned one. I am the whore and the holy one." Transcending all dualities.</p>
+                <div class="tags">
+                    <span class="tag">Gnostic</span>
+                    <span class="tag">Coptic</span>
+                    <span class="tag feature">Participles</span>
+                    <span class="tag feature">Cleft Constructions</span>
+                </div>
+            </div>
+
+            <!-- Odes of Solomon -->
+            <div class="translation-card" data-category="religious">
+                <h4><a href="translations/odes_of_solomon.html">Odas de Salomone</a></h4>
+                <p class="meta">Odes of Solomon | c. 80-125 CE</p>
+                <p class="description">Early Christian mystical hymns rich with imagery of light, water, and divine love. Among the earliest Christian devotional poetry.</p>
+                <div class="tags">
+                    <span class="tag">Early Christian</span>
+                    <span class="tag">Syriac</span>
+                    <span class="tag feature">Water Imagery</span>
+                    <span class="tag feature">Telicity Markers</span>
+                </div>
+            </div>
+
+            <!-- Romeo and Juliet -->
+            <div class="translation-card" data-category="literary">
+                <h4><a href="translations/romeo_juliet.html">Romeo e Guljeta</a></h4>
+                <p class="meta">Romeo and Juliet: The Balcony Scene | Shakespeare, c. 1595</p>
+                <p class="description">"O Romeo, Romeo! porke ses tu Romeo?" The famous balcony scene showcasing Kartadzinu's capacity for poetic register and light/dark imagery.</p>
+                <div class="tags">
+                    <span class="tag">Drama</span>
+                    <span class="tag">English</span>
+                    <span class="tag feature">Poetic Register</span>
+                    <span class="tag feature">Subjunctive</span>
+                </div>
+            </div>
+
+            <!-- Conlang Benchmarks -->
+            <div class="translation-card" data-category="benchmark">
+                <h4><a href="translations/conlang_benchmarks.html">Tekstus de Referensa</a></h4>
+                <p class="meta">Conlang Benchmark Texts</p>
+                <p class="description">Standard texts used by language creators: The North Wind and the Sun, Schleicher's Fable, The Hobbit opening, and the Tower of Babel.</p>
+                <div class="tags">
+                    <span class="tag">Benchmark</span>
+                    <span class="tag">Multiple Sources</span>
+                    <span class="tag feature">Comparatives</span>
+                    <span class="tag feature">Causatives</span>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <h2>About the Translations</h2>
+            <p>Each translation is presented in bilingual format with the English original alongside the Kartadzinu version. Translations include:</p>
+            <ul>
+                <li><strong>Introduction</strong> — Context about the source text and which Kartadzinu features it showcases</li>
+                <li><strong>Bilingual Text</strong> — Side-by-side English and Kartadzinu</li>
+                <li><strong>Translation Notes</strong> — Detailed explanation of grammatical features and vocabulary</li>
+            </ul>
+
+            <h3>Features by Text</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Text</th>
+                        <th>Key Features Demonstrated</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hymn of the Pearl</td>
+                        <td>Construct state, VSO narrative, telicity markers, participles as predicates</td>
+                    </tr>
+                    <tr>
+                        <td>Thunder, Perfect Mind</td>
+                        <td>Participles as main predicates, cleft constructions, semantic distinctions (konesere/sapere)</td>
+                    </tr>
+                    <tr>
+                        <td>Odes of Solomon</td>
+                        <td>Mystical water vocabulary, imperative/hortatory forms, construct state for divine relationships</td>
+                    </tr>
+                    <tr>
+                        <td>Romeo and Juliet</td>
+                        <td>Poetic VSO, subjunctive for wishes, light/dark semantic field, rhetorical questions</td>
+                    </tr>
+                    <tr>
+                        <td>Benchmark Texts</td>
+                        <td>Comparative constructions, causative with <em>fare</em>, aspect distinctions</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>Kartadzinu Language Project</p>
+        <p class="version">Version 2.0 — November 2025</p>
+    </footer>
+
+    <script>
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.translation-card').forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

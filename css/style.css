@@ -1,0 +1,831 @@
+/* Kartadzinu Language Resource - Shared Styles */
+/* Version 2.0 - November 2025 */
+
+/* ========================================
+   CSS Variables (Theme)
+   ======================================== */
+:root {
+    --primary: #8B4513;
+    --primary-light: #D2691E;
+    --secondary: #2F4F4F;
+    --accent: #DAA520;
+    --bg: #FDF5E6;
+    --bg-alt: #FAF0E6;
+    --text: #333;
+    --text-light: #666;
+    --border: #DEB887;
+    --success: #228B22;
+    --warning: #DAA520;
+    --error: #CD5C5C;
+}
+
+/* ========================================
+   Base Reset & Typography
+   ======================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary-light);
+    text-decoration: underline;
+}
+
+/* ========================================
+   Header
+   ======================================== */
+header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+header h1 a:hover {
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+header .subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+header .tagline {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+/* Large header for home page */
+header.hero {
+    padding: 3rem 2rem;
+}
+
+header.hero h1 {
+    font-size: 3rem;
+}
+
+header.hero .subtitle {
+    font-size: 1.3rem;
+}
+
+/* ========================================
+   Navigation
+   ======================================== */
+nav {
+    background: var(--secondary);
+    padding: 0.75rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+    display: block;
+}
+
+nav a:hover, nav a.active {
+    background: var(--primary-light);
+    text-decoration: none;
+}
+
+/* ========================================
+   Main Content Area
+   ======================================== */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Narrower main for reading-focused pages */
+main.narrow {
+    max-width: 900px;
+}
+
+/* ========================================
+   Sections (Content Cards)
+   ======================================== */
+section {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-left: 4px solid var(--accent);
+}
+
+section h2 {
+    color: var(--primary);
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+}
+
+section h3 {
+    color: var(--secondary);
+    margin: 1.5rem 0 1rem;
+    font-size: 1.35rem;
+}
+
+section h4 {
+    color: var(--primary-light);
+    margin: 1rem 0 0.5rem;
+    font-size: 1.1rem;
+}
+
+section p {
+    margin-bottom: 1rem;
+}
+
+section ul, section ol {
+    margin: 1rem 0 1rem 2rem;
+}
+
+section li {
+    margin-bottom: 0.5rem;
+}
+
+/* ========================================
+   Tables
+   ======================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    background: var(--bg-alt);
+    color: var(--primary);
+    font-weight: 600;
+    position: sticky;
+    top: 48px; /* Below nav */
+}
+
+tr:hover {
+    background: var(--bg-alt);
+}
+
+/* Compact table variant */
+table.compact th,
+table.compact td {
+    padding: 0.5rem;
+    font-size: 0.95rem;
+}
+
+/* ========================================
+   Example Boxes
+   ======================================== */
+.example {
+    background: var(--bg-alt);
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+    border-left: 3px solid var(--accent);
+}
+
+.example .kartadzinu,
+.example .rumantsu {
+    font-style: italic;
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.example .english {
+    color: var(--text-light);
+    margin-top: 0.25rem;
+}
+
+.example .gloss {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: 0.25rem;
+}
+
+/* ========================================
+   Dictionary / Vocabulary Entries
+   ======================================== */
+.dict-entry {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+}
+
+.dict-entry:hover {
+    background: var(--bg-alt);
+}
+
+.dict-entry:last-child {
+    border-bottom: none;
+}
+
+.dict-entry .headword {
+    font-weight: bold;
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+.dict-entry .ipa {
+    color: var(--text-light);
+    font-family: 'Lucida Sans Unicode', 'DejaVu Sans', sans-serif;
+    margin-left: 0.5rem;
+}
+
+.dict-entry .pos {
+    font-style: italic;
+    color: var(--secondary);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.dict-entry .origin {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+}
+
+.dict-entry .definition {
+    margin: 0.5rem 0 0.5rem 1rem;
+}
+
+.dict-entry .usage {
+    font-style: italic;
+    color: var(--text-light);
+    margin-left: 1rem;
+    font-size: 0.95rem;
+}
+
+.dict-entry .sources {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+}
+
+.dict-entry .sources a {
+    color: var(--secondary);
+}
+
+/* ========================================
+   Bilingual Text Display
+   ======================================== */
+.bilingual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    .bilingual {
+        grid-template-columns: 1fr;
+    }
+}
+
+.bilingual .col h5 {
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.bilingual .kartadzinu-text,
+.bilingual .rumantsu-text {
+    font-style: italic;
+}
+
+/* Verse/poetry formatting */
+.verse {
+    margin: 1rem 0;
+    line-height: 1.8;
+}
+
+.verse .indent {
+    margin-left: 2rem;
+}
+
+.verse .stanza {
+    margin-bottom: 1rem;
+}
+
+/* ========================================
+   Translation Cards (Library)
+   ======================================== */
+.translation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.translation-card {
+    background: var(--bg-alt);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid var(--border);
+}
+
+.translation-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.translation-card h4 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.translation-card h4 a {
+    color: var(--primary);
+}
+
+.translation-card .meta {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+.translation-card .description {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.translation-card .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: var(--primary);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+
+.tag.feature {
+    background: var(--secondary);
+}
+
+/* ========================================
+   Search & Filters
+   ======================================== */
+.search-box {
+    padding: 1rem;
+    background: var(--bg-alt);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.search-box input[type="text"],
+.search-box input[type="search"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.filter-btn {
+    padding: 0.4rem 0.8rem;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary);
+}
+
+.filter-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* ========================================
+   Letter Index (A-Z navigation)
+   ======================================== */
+.letter-index {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: var(--bg-alt);
+    border-radius: 4px;
+}
+
+.letter-index a {
+    padding: 0.25rem 0.75rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.letter-index a:hover {
+    background: var(--primary-light);
+}
+
+.letter-index a.disabled {
+    background: var(--border);
+    color: var(--text-light);
+    cursor: default;
+}
+
+/* ========================================
+   Collapsible Sections
+   ======================================== */
+.collapsible {
+    cursor: pointer;
+    padding: 1rem;
+    background: var(--bg-alt);
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary);
+    border-radius: 4px;
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.collapsible:hover {
+    background: var(--border);
+}
+
+.collapsible::after {
+    content: '+';
+    font-size: 1.5rem;
+}
+
+.collapsible.active::after {
+    content: '−';
+}
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 1rem;
+}
+
+.collapsible-content.show {
+    max-height: none;
+    padding: 1rem;
+}
+
+/* ========================================
+   Phonology Display
+   ======================================== */
+.phonology-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.phonology-item {
+    background: var(--bg-alt);
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.phonology-item .letter {
+    font-size: 2rem;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.phonology-item .ipa {
+    font-family: 'Lucida Sans Unicode', 'DejaVu Sans', sans-serif;
+    color: var(--text-light);
+}
+
+.phonology-item .example {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+/* ========================================
+   Table of Contents
+   ======================================== */
+.toc {
+    background: var(--bg-alt);
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+}
+
+.toc h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.toc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.toc li {
+    margin-bottom: 0.5rem;
+}
+
+.toc li ul {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.toc a {
+    color: var(--text);
+}
+
+.toc a:hover {
+    color: var(--primary);
+}
+
+/* ========================================
+   Paradigm Tables (Verb conjugations, etc.)
+   ======================================== */
+.paradigm {
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.paradigm table {
+    min-width: 500px;
+}
+
+.paradigm th.person {
+    width: 100px;
+}
+
+.paradigm .form {
+    font-style: italic;
+    color: var(--primary);
+}
+
+.paradigm .irregular {
+    color: var(--primary-light);
+    font-weight: bold;
+}
+
+/* ========================================
+   Word Popup (for translation pages)
+   ======================================== */
+.word-popup {
+    position: absolute;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    max-width: 300px;
+    display: none;
+}
+
+.word-popup.show {
+    display: block;
+}
+
+.word-popup .close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    cursor: pointer;
+    color: var(--text-light);
+}
+
+/* ========================================
+   Breadcrumbs
+   ======================================== */
+.breadcrumbs {
+    padding: 0.75rem 0;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.breadcrumbs a {
+    color: var(--text-light);
+}
+
+.breadcrumbs a:hover {
+    color: var(--primary);
+}
+
+.breadcrumbs .separator {
+    margin: 0 0.5rem;
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+footer {
+    background: var(--secondary);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: var(--accent);
+}
+
+footer .version {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-muted { color: var(--text-light); }
+.text-primary { color: var(--primary); }
+.text-accent { color: var(--accent); }
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+
+.hidden { display: none; }
+.italic { font-style: italic; }
+.bold { font-weight: bold; }
+
+/* Kartadzinu text styling */
+.ktz {
+    font-style: italic;
+    color: var(--primary);
+}
+
+/* Latin etymology */
+.latin {
+    font-variant: small-caps;
+    color: var(--text-light);
+}
+
+/* ========================================
+   Responsive Adjustments
+   ======================================== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header.hero h1 {
+        font-size: 2.5rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+
+    nav ul {
+        gap: 0.25rem;
+    }
+
+    nav a {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .translation-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    section h2 {
+        font-size: 1.4rem;
+    }
+
+    .phonology-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+@media print {
+    nav, .search-box, .filter-group, .letter-index {
+        display: none;
+    }
+
+    header {
+        background: none;
+        color: var(--text);
+        padding: 1rem 0;
+    }
+
+    section {
+        box-shadow: none;
+        border: 1px solid var(--border);
+        page-break-inside: avoid;
+    }
+
+    a {
+        color: var(--text);
+        text-decoration: none;
+    }
+}
