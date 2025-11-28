@@ -1,5 +1,5 @@
 // Kartadzinu Vocabulary Data
-// 853 entries from vocabulary.md
+// 924 entries
 const vocabData = [
   {
     "word": "a",
@@ -358,6 +358,19 @@ const vocabData = [
     ]
   },
   {
+    "word": "aljenu",
+    "pron": "/alˈʒenu/",
+    "pos": "adj.",
+    "defs": [
+      "foreign, alien",
+      "belonging to another"
+    ],
+    "ex": [
+      "En terra aljena.",
+      "In a foreign land."
+    ]
+  },
+  {
     "word": "alju",
     "pron": "/alju/",
     "pos": "n. m.",
@@ -468,6 +481,18 @@ const vocabData = [
     ]
   },
   {
+    "word": "amfiteatru",
+    "pron": "/amfiteatru/",
+    "pos": "n. m.",
+    "defs": [
+      "amphitheater, arena"
+    ],
+    "ex": [
+      "Arrivaimu al amfiteatru.",
+      "We arrived at the amphitheater."
+    ]
+  },
+  {
     "word": "amaru",
     "pron": "/amaru/",
     "pos": "adj.",
@@ -514,6 +539,18 @@ const vocabData = [
     "ex": [
       "An elus vidan.",
       "If they see."
+    ]
+  },
+  {
+    "word": "anelare",
+    "pron": "/anelare/",
+    "pos": "v. I",
+    "defs": [
+      "to pant, long for, yearn"
+    ],
+    "ex": [
+      "Anelu a te.",
+      "I pant for you."
     ]
   },
   {
@@ -685,6 +722,30 @@ const vocabData = [
     ]
   },
   {
+    "word": "arare",
+    "pron": "/arare/",
+    "pos": "v. I",
+    "defs": [
+      "to plough"
+    ],
+    "ex": [
+      "Aramu la terra.",
+      "We plough the land."
+    ]
+  },
+  {
+    "word": "aratru",
+    "pron": "/aratru/",
+    "pos": "n. m.",
+    "defs": [
+      "plough"
+    ],
+    "ex": [
+      "Lu aratru e de ferru.",
+      "The plough is of iron."
+    ]
+  },
+  {
     "word": "arboru",
     "pron": "/arboru/",
     "pos": "n. m.",
@@ -851,6 +912,19 @@ const vocabData = [
       "Aset kerkamu.",
       "We're still seeking."
     ]
+  },
+  {
+    "word": "asnu",
+    "pron": "/asnu/",
+    "pos": "n. m.",
+    "defs": [
+      "donkey"
+    ],
+    "ex": [
+      "Lu asnu porta lu kargamentu.",
+      "The donkey carries the load."
+    ],
+    "note": "Attested in Berber as asnus; shows African -u ending"
   },
   {
     "word": "askondere",
@@ -1241,6 +1315,18 @@ const vocabData = [
     ]
   },
   {
+    "word": "basja",
+    "pron": "/básja/",
+    "pos": "n. f.",
+    "defs": [
+      "kiss"
+    ],
+    "ex": [
+      "Kubrientu-lu de basjas rapidas.",
+      "Showering him with hurried kisses."
+    ]
+  },
+  {
     "word": "beatu",
     "pron": "/beatu/",
     "pos": "adj.",
@@ -1250,6 +1336,30 @@ const vocabData = [
     "ex": [
       "Beatae son kelus ke ja beviveru.",
       "Blessed are those who have drunk."
+    ]
+  },
+  {
+    "word": "belesa",
+    "pron": "/belesa/",
+    "pos": "n. f.",
+    "defs": [
+      "beauty"
+    ],
+    "ex": [
+      "Belesa tan antika e tan noba.",
+      "Beauty so ancient and so new."
+    ]
+  },
+  {
+    "word": "beku",
+    "pron": "/beku/",
+    "pos": "n. m.",
+    "defs": [
+      "beak"
+    ],
+    "ex": [
+      "Mittau beku-seu en la urna.",
+      "He put his beak into the pitcher."
     ]
   },
   {
@@ -1314,6 +1424,18 @@ const vocabData = [
     ]
   },
   {
+    "word": "bestja",
+    "pron": "/béstja/",
+    "pos": "n. f.",
+    "defs": [
+      "beast, wild animal"
+    ],
+    "ex": [
+      "Kondemnata ad bestjas.",
+      "Condemned to the beasts."
+    ]
+  },
+  {
     "word": "bevere",
     "pron": "/bevere/",
     "pos": "v. II",
@@ -1323,6 +1445,43 @@ const vocabData = [
     "ex": [
       "Bevu akwa.",
       "I drink water."
+    ]
+  },
+  {
+    "word": "bolpe",
+    "pron": "/bolpe/",
+    "pos": "n. m./f.",
+    "defs": [
+      "fox"
+    ],
+    "ex": [
+      "Lu Bolpe fue elektu kome djuditsi.",
+      "The Fox was chosen as judge."
+    ]
+  },
+  {
+    "word": "bisione",
+    "pron": "/bizjóne/",
+    "pos": "n. f.",
+    "defs": [
+      "vision",
+      "dream, prophetic vision"
+    ],
+    "ex": [
+      "Bidai una bisione en la note.",
+      "I saw a vision in the night."
+    ]
+  },
+  {
+    "word": "biktoria",
+    "pron": "/biktórja/",
+    "pos": "n. f.",
+    "defs": [
+      "victory"
+    ],
+    "ex": [
+      "La biktoria es nosta.",
+      "Victory is ours."
     ]
   },
   {
@@ -1360,6 +1519,19 @@ const vocabData = [
       "Lu kelu blu.",
       "The blue sky."
     ]
+  },
+  {
+    "word": "bokare",
+    "pron": "/bokáre/",
+    "pos": "v. I",
+    "defs": [
+      "to call, to cry out"
+    ],
+    "ex": [
+      "Bokasti e klamasti.",
+      "You called and cried out."
+    ],
+    "origin": "betacism < Lat. *vocare*"
   },
   {
     "word": "bona",
@@ -1733,6 +1905,19 @@ const vocabData = [
       "La kéna e preparata.",
       "Dinner is ready."
     ]
+  },
+  {
+    "word": "kentenarju",
+    "pron": "/kentenarju/",
+    "pos": "n. m.",
+    "defs": [
+      "granary"
+    ],
+    "ex": [
+      "Lu kentenarju e plenu.",
+      "The granary is full."
+    ],
+    "note": "African Latin exclusive term (cf. Spanish placenames Centenero)"
   },
   {
     "word": "kentu",
@@ -2635,6 +2820,19 @@ const vocabData = [
     ]
   },
   {
+    "word": "drakone",
+    "pron": "/drakóne/",
+    "pos": "n. m.",
+    "defs": [
+      "dragon",
+      "serpent"
+    ],
+    "ex": [
+      "Sub la skala djatseba un drakone.",
+      "Beneath the ladder lay a dragon."
+    ]
+  },
+  {
     "word": "du",
     "pron": "/du/",
     "pos": "contraction",
@@ -2709,6 +2907,18 @@ const vocabData = [
     ]
   },
   {
+    "word": "genna",
+    "pron": "/génna/",
+    "pos": "n. f.",
+    "defs": [
+      "cheek"
+    ],
+    "ex": [
+      "Las lokkas supra gennas-seas roseas.",
+      "The locks over her rosy cheeks."
+    ]
+  },
+  {
     "word": "gentilesa",
     "pron": "/gentilesa/",
     "pos": "n. f.",
@@ -2745,6 +2955,18 @@ const vocabData = [
     ]
   },
   {
+    "word": "gotta",
+    "pron": "/gótta/",
+    "pos": "n. f.",
+    "defs": [
+      "drop (of liquid)"
+    ],
+    "ex": [
+      "Una gotta de oleu ardente.",
+      "A drop of burning oil."
+    ]
+  },
+  {
     "word": "gugu",
     "pron": "/gugu/",
     "pos": "n. m.",
@@ -2754,6 +2976,18 @@ const vocabData = [
     "ex": [
       "Lu gugu de amor-meu.",
       "The yoke of my love."
+    ]
+  },
+  {
+    "word": "guturu",
+    "pron": "/guˈturu/",
+    "pos": "n. m.",
+    "defs": [
+      "throat, palate"
+    ],
+    "ex": [
+      "Ke adheria lingua-mea a guturu-meu.",
+      "Let my tongue cling to my palate."
     ]
   },
   {
@@ -2864,6 +3098,18 @@ const vocabData = [
       "God is love."
     ],
     "origin": "3sg. of *essere*"
+  },
+  {
+    "word": "ebigilare",
+    "pron": "/ebigiláre/",
+    "pos": "v. I",
+    "defs": [
+      "to wake up, awaken"
+    ],
+    "ex": [
+      "Ebigilai e kommentsei skribere.",
+      "I woke up and began to write."
+    ]
   },
   {
     "word": "edifikare",
@@ -3216,6 +3462,19 @@ const vocabData = [
     ]
   },
   {
+    "word": "faba",
+    "pron": "/faba/",
+    "pos": "n. f.",
+    "defs": [
+      "broad bean, fava bean"
+    ],
+    "ex": [
+      "Fabas kon karne.",
+      "Beans with meat."
+    ],
+    "note": "Attested in Berber as ibaw"
+  },
+  {
     "word": "fabula",
     "pron": "/fabula/",
     "pos": "n. f.",
@@ -3300,6 +3559,18 @@ const vocabData = [
       "What are you doing?"
     ],
     "origin": "irreg."
+  },
+  {
+    "word": "faretra",
+    "pron": "/farétra/",
+    "pos": "n. f.",
+    "defs": [
+      "quiver (for arrows)"
+    ],
+    "ex": [
+      "Trasai una sagitta de la faretra.",
+      "She drew an arrow from the quiver."
+    ]
   },
   {
     "word": "farmatsja",
@@ -3530,6 +3801,18 @@ const vocabData = [
     ]
   },
   {
+    "word": "fluminu",
+    "pron": "/fluˈminu/",
+    "pos": "n. m.",
+    "defs": [
+      "river"
+    ],
+    "ex": [
+      "Supra lus fluminus de Babilone.",
+      "By the rivers of Babylon."
+    ]
+  },
+  {
     "word": "foku",
     "pron": "/foku/",
     "pos": "n. m.",
@@ -3590,6 +3873,18 @@ const vocabData = [
     ]
   },
   {
+    "word": "formika",
+    "pron": "/forˈmika/",
+    "pos": "n. f.",
+    "defs": [
+      "ant"
+    ],
+    "ex": [
+      "La Formika laborava dure.",
+      "The Ant worked hard."
+    ]
+  },
+  {
     "word": "fórma",
     "pron": "/fórma/",
     "pos": "n. f.",
@@ -3635,6 +3930,18 @@ const vocabData = [
     "ex": [
       "Fortsa e furia fallan.",
       "Force and bluster fail."
+    ]
+  },
+  {
+    "word": "fragrare",
+    "pron": "/fragráre/",
+    "pos": "v. I",
+    "defs": [
+      "to give off fragrance, to smell sweet"
+    ],
+    "ex": [
+      "Fragrasti, e trasai spiritu.",
+      "You breathed fragrance, and I drew in breath."
     ]
   },
   {
@@ -3722,6 +4029,19 @@ const vocabData = [
     ]
   },
   {
+    "word": "furnu",
+    "pron": "/furnu/",
+    "pos": "n. m.",
+    "defs": [
+      "oven"
+    ],
+    "ex": [
+      "Lu pane du furnu.",
+      "The bread from the oven."
+    ],
+    "note": "Attested in Berber as afurnu"
+  },
+  {
     "word": "futuru",
     "pron": "/futuru/",
     "pos": "n. m./adj.",
@@ -3779,6 +4099,18 @@ const vocabData = [
     "ex": [
       "La gente parla.",
       "The people speak."
+    ]
+  },
+  {
+    "word": "getare",
+    "pron": "/geˈtare/",
+    "pos": "v. I",
+    "defs": [
+      "to throw, drop, cast"
+    ],
+    "ex": [
+      "Prendau un kalkulu e getau-lu en la urna.",
+      "He picked up a pebble and dropped it into the pitcher."
     ]
   },
   {
@@ -3868,6 +4200,18 @@ const vocabData = [
     ]
   },
   {
+    "word": "grilu",
+    "pron": "/grilu/",
+    "pos": "n. m.",
+    "defs": [
+      "grasshopper, cricket"
+    ],
+    "ex": [
+      "Lu Grilu kantava totu lu istiu.",
+      "The Grasshopper sang all summer."
+    ]
+  },
+  {
     "word": "gwardia",
     "pron": "/gwardia/",
     "pos": "n. f.",
@@ -3889,6 +4233,18 @@ const vocabData = [
     "ex": [
       "So pats, e guerra ja vinit.",
       "I am peace, and war has come."
+    ]
+  },
+  {
+    "word": "gustare",
+    "pron": "/gustáre/",
+    "pos": "v. I",
+    "defs": [
+      "to taste"
+    ],
+    "ex": [
+      "Gustai e ai fame e ai sete.",
+      "I tasted, and I hunger and thirst."
     ]
   },
   {
@@ -3969,6 +4325,18 @@ const vocabData = [
     "pos": "n. f.",
     "defs": [
       "hour"
+    ]
+  },
+  {
+    "word": "humeru",
+    "pron": "/húmeru/",
+    "pos": "n. m.",
+    "defs": [
+      "shoulder"
+    ],
+    "ex": [
+      "Supra humeru destru du deu.",
+      "On the right shoulder of the god."
     ]
   },
   {
@@ -4249,6 +4617,18 @@ const vocabData = [
     "origin": "also *entre*"
   },
   {
+    "word": "interrogare",
+    "pron": "/interrogare/",
+    "pos": "v. I",
+    "defs": [
+      "to ask, question, interrogate"
+    ],
+    "ex": [
+      "Ili interrogaveru-nos parabolas de kantsone.",
+      "There they asked us for words of song."
+    ]
+  },
+  {
     "word": "intra",
     "pron": "/intra/",
     "pos": "prep./adv.",
@@ -4258,6 +4638,18 @@ const vocabData = [
     "ex": [
       "Kontrolu-mesu interioru eksiste intra me.",
       "Interior self-control exists within me."
+    ]
+  },
+  {
+    "word": "invernu",
+    "pron": "/inˈvernu/",
+    "pos": "n. m.",
+    "defs": [
+      "winter"
+    ],
+    "ex": [
+      "Sto amasando nutrimento por lu invernu.",
+      "I am storing food for winter."
     ]
   },
   {
@@ -4284,6 +4676,18 @@ const vocabData = [
       "I go to the house."
     ],
     "origin": "irreg."
+  },
+  {
+    "word": "istiu",
+    "pron": "/isˈtiu/",
+    "pos": "n. m.",
+    "defs": [
+      "summer"
+    ],
+    "ex": [
+      "Totu lu istiu.",
+      "All summer long."
+    ]
   },
   {
     "word": "istu",
@@ -4442,6 +4846,30 @@ const vocabData = [
     ]
   },
   {
+    "word": "kalkare",
+    "pron": "/kalkáre/",
+    "pos": "v. I",
+    "defs": [
+      "to tread upon, to trample"
+    ],
+    "ex": [
+      "Kalkai la testa-ela.",
+      "I trod upon its head."
+    ]
+  },
+  {
+    "word": "kalkulu",
+    "pron": "/ˈkalkulu/",
+    "pos": "n. m.",
+    "defs": [
+      "pebble, small stone"
+    ],
+    "ex": [
+      "Prendau un kalkulu e getau-lu en la urna.",
+      "He picked up a pebble and dropped it in the pitcher."
+    ]
+  },
+  {
     "word": "kampu",
     "pron": "/kampu/",
     "pos": "n. m.",
@@ -4490,6 +4918,18 @@ const vocabData = [
     ]
   },
   {
+    "word": "kantiku",
+    "pron": "/kanˈtiku/",
+    "pos": "n. m.",
+    "defs": [
+      "canticle, sacred song, hymn"
+    ],
+    "ex": [
+      "Kantate a nos de lus kantikus de Sione.",
+      "Sing us one of the songs of Zion."
+    ]
+  },
+  {
     "word": "kapu",
     "pron": "/kapu/",
     "pos": "n. m.",
@@ -4535,6 +4975,30 @@ const vocabData = [
     "ex": [
       "Tirantu un karru pesante.",
       "Pulling a heavy wagon."
+    ]
+  },
+  {
+    "word": "karsere",
+    "pron": "/kársere/",
+    "pos": "n. m.",
+    "defs": [
+      "prison, jail"
+    ],
+    "ex": [
+      "Fusiveru misi en lu karsere.",
+      "They were put in the prison."
+    ]
+  },
+  {
+    "word": "kaseu",
+    "pron": "/kaséu/",
+    "pos": "n. m.",
+    "defs": [
+      "cheese"
+    ],
+    "ex": [
+      "Lu pastore me dau kaseu.",
+      "The shepherd gave me cheese."
     ]
   },
   {
@@ -4635,6 +5099,18 @@ const vocabData = [
     "ex": [
       "Ki arrivau?",
       "Who arrived?"
+    ]
+  },
+  {
+    "word": "kitara",
+    "pron": "/kiˈtara/",
+    "pos": "n. f.",
+    "defs": [
+      "harp, lyre, cithara"
+    ],
+    "ex": [
+      "Suspendivemu kitaras-nostas.",
+      "We hung our harps."
     ]
   },
   {
@@ -4891,6 +5367,18 @@ const vocabData = [
     ]
   },
   {
+    "word": "korbu",
+    "pron": "/korbu/",
+    "pos": "n. m.",
+    "defs": [
+      "crow, raven"
+    ],
+    "ex": [
+      "Un Korbu, mesu-mortu de site.",
+      "A Crow, half-dead with thirst."
+    ]
+  },
+  {
     "word": "kordju",
     "pron": "/kordju/",
     "pos": "n. m.",
@@ -4925,6 +5413,18 @@ const vocabData = [
     "ex": [
       "Lu korpu e templu.",
       "The body is a temple."
+    ]
+  },
+  {
+    "word": "koruskare",
+    "pron": "/koruskáre/",
+    "pos": "v. I",
+    "defs": [
+      "to flash, to gleam"
+    ],
+    "ex": [
+      "Koruskasti, splendisti.",
+      "You flashed, you shone."
     ]
   },
   {
@@ -5046,6 +5546,18 @@ const vocabData = [
     "ex": [
       "Kursai en via-ela.",
       "I ran in his way."
+    ]
+  },
+  {
+    "word": "kursa",
+    "pron": "/kursa/",
+    "pos": "n. f.",
+    "defs": [
+      "race, running contest"
+    ],
+    "ex": [
+      "Lentu e konstante vinse la kursa.",
+      "Slow and steady wins the race."
     ]
   },
   {
@@ -5179,6 +5691,18 @@ const vocabData = [
     ]
   },
   {
+    "word": "lantsa",
+    "pron": "/lántsa/",
+    "pos": "n. f.",
+    "defs": [
+      "lance, spear"
+    ],
+    "ex": [
+      "Ferinas armas e lantsas.",
+      "Weapons of beasts and lances."
+    ]
+  },
+  {
     "word": "largu",
     "pron": "/largu/",
     "pos": "adj.",
@@ -5263,6 +5787,18 @@ const vocabData = [
     ]
   },
   {
+    "word": "lepore",
+    "pron": "/leˈpore/",
+    "pos": "n. m.",
+    "defs": [
+      "hare"
+    ],
+    "ex": [
+      "Lu Lepore kursau avante.",
+      "The Hare darted ahead."
+    ]
+  },
+  {
     "word": "lettera",
     "pron": "/lettera/",
     "pos": "n. f.",
@@ -5284,6 +5820,18 @@ const vocabData = [
     "ex": [
       "Su lu letu.",
       "On the bed."
+    ]
+  },
+  {
+    "word": "letitsja",
+    "pron": "/leˈtitsja/",
+    "pos": "n. f.",
+    "defs": [
+      "joy, gladness"
+    ],
+    "ex": [
+      "En lu printsipiu de letitsja-mea.",
+      "Above my highest joy."
     ]
   },
   {
@@ -5445,6 +5993,18 @@ const vocabData = [
     ]
   },
   {
+    "word": "lutserna",
+    "pron": "/lutséarna/",
+    "pos": "n. f.",
+    "defs": [
+      "lamp, oil lamp"
+    ],
+    "ex": [
+      "La lutserna espuau una gotta de oleu ardente.",
+      "The lamp spat a drop of burning oil."
+    ]
+  },
+  {
     "word": "lateri",
     "pron": "/lateri/",
     "pos": "n. m.",
@@ -5522,6 +6082,18 @@ const vocabData = [
     "ex": [
       "Grandu ma levere.",
       "Big but light."
+    ]
+  },
+  {
+    "word": "magistra",
+    "pron": "/magistra/",
+    "pos": "n. f.",
+    "defs": [
+      "teacher (f.), mistress"
+    ],
+    "ex": [
+      "Obstinatsione es magistra.",
+      "Obstinacy is our teacher."
     ]
   },
   {
@@ -5994,6 +6566,18 @@ const vocabData = [
     ]
   },
   {
+    "word": "mokare",
+    "pron": "/moˈkare/",
+    "pos": "v. I",
+    "defs": [
+      "to mock, ridicule"
+    ],
+    "ex": [
+      "Un Lepore mokau una Testudine.",
+      "A Hare mocked a Tortoise."
+    ]
+  },
+  {
     "word": "monte",
     "pron": "/monte/",
     "pos": "n. m.",
@@ -6283,6 +6867,18 @@ const vocabData = [
     ]
   },
   {
+    "word": "nive",
+    "pron": "/nive/",
+    "pos": "n. f.",
+    "defs": [
+      "snow"
+    ],
+    "ex": [
+      "La nive kobriva la terra.",
+      "Snow covered the ground."
+    ]
+  },
+  {
     "word": "njeru",
     "pron": "/njeru/",
     "pos": "adj.",
@@ -6569,6 +7165,18 @@ const vocabData = [
     ]
   },
   {
+    "word": "oblidione",
+    "pron": "/obliˈdjone/",
+    "pos": "n. f.",
+    "defs": [
+      "forgetfulness, oblivion"
+    ],
+    "ex": [
+      "En oblidione sia destra-mea.",
+      "Let my right hand be forgotten."
+    ]
+  },
+  {
     "word": "observare",
     "pron": "/observare/",
     "pos": "v. I",
@@ -6737,6 +7345,18 @@ const vocabData = [
     ]
   },
   {
+    "word": "obstinatsione",
+    "pron": "/obstinatsjóne/",
+    "pos": "n. f.",
+    "defs": [
+      "obstinacy, steadfastness"
+    ],
+    "ex": [
+      "Kela ipsa obstinatsione es magistra.",
+      "That very obstinacy is our teacher."
+    ]
+  },
+  {
     "word": "omu",
     "pron": "/omu/",
     "pos": "n. m.",
@@ -6868,6 +7488,19 @@ const vocabData = [
       "Partiai de Oriente.",
       "I departed from the East."
     ]
+  },
+  {
+    "word": "ortu",
+    "pron": "/ortu/",
+    "pos": "n. m.",
+    "defs": [
+      "garden, orchard"
+    ],
+    "ex": [
+      "Lu ortu de olivas.",
+      "The olive orchard."
+    ],
+    "note": "Attested in Berber as urtu"
   },
   {
     "word": "oru",
@@ -7084,6 +7717,18 @@ const vocabData = [
     "ex": [
       "Alora partiai de Oriente.",
       "Then I departed from the East."
+    ]
+  },
+  {
+    "word": "pastore",
+    "pron": "/pastóre/",
+    "pos": "n. m.",
+    "defs": [
+      "shepherd"
+    ],
+    "ex": [
+      "Lu pastore me dau kaseu.",
+      "The shepherd gave me cheese."
     ]
   },
   {
@@ -7665,6 +8310,19 @@ const vocabData = [
     ]
   },
   {
+    "word": "printsipiu",
+    "pron": "/prinˈtsipju/",
+    "pos": "n. m.",
+    "defs": [
+      "beginning, chief place",
+      "highest, first place"
+    ],
+    "ex": [
+      "En lu printsipiu de letitsja-mea.",
+      "Above my highest joy."
+    ]
+  },
+  {
     "word": "profeta",
     "pron": "/profeta/",
     "pos": "n. m.",
@@ -7831,6 +8489,18 @@ const vocabData = [
     "ex": [
       "Portantu un omu rapidamente.",
       "Carrying a man quickly."
+    ]
+  },
+  {
+    "word": "rasora",
+    "pron": "/razóra/",
+    "pos": "n. f.",
+    "defs": [
+      "razor"
+    ],
+    "ex": [
+      "La rasora se penitau de sea akja sakrilega.",
+      "The razor regretted its sacrilegious edge."
     ]
   },
   {
@@ -8053,6 +8723,19 @@ const vocabData = [
     ]
   },
   {
+    "word": "rostru",
+    "pron": "/rostru/",
+    "pos": "n. m.",
+    "defs": [
+      "face"
+    ],
+    "ex": [
+      "Lu rostru-dela e belu.",
+      "Her face is beautiful."
+    ],
+    "note": "African Latin semantic shift from 'beak' to 'face' (cf. Spanish rostro)"
+  },
+  {
     "word": "ruina",
     "pron": "/ruina/",
     "pos": "n. f.",
@@ -8077,6 +8760,18 @@ const vocabData = [
     ]
   },
   {
+    "word": "sagitta",
+    "pron": "/sagítta/",
+    "pos": "n. f.",
+    "defs": [
+      "arrow"
+    ],
+    "ex": [
+      "Trasai una sagitta de la faretra.",
+      "She drew an arrow from the quiver."
+    ]
+  },
+  {
     "word": "sal",
     "pron": "/sal/",
     "pos": "n. m.",
@@ -8086,6 +8781,30 @@ const vocabData = [
     "ex": [
       "Sal e piper.",
       "Salt and pepper."
+    ]
+  },
+  {
+    "word": "salire",
+    "pron": "/saˈlire/",
+    "pos": "v. III",
+    "defs": [
+      "to jump, leap, dance"
+    ],
+    "ex": [
+      "Lu Grilu saliva totu lu istiu.",
+      "The Grasshopper danced all summer."
+    ]
+  },
+  {
+    "word": "salitse",
+    "pron": "/saˈlitse/",
+    "pos": "n. f.",
+    "defs": [
+      "willow"
+    ],
+    "ex": [
+      "Supra lus salitses en mediu-ela.",
+      "Upon the willows in its midst."
     ]
   },
   {
@@ -8209,6 +8928,18 @@ const vocabData = [
     ]
   },
   {
+    "word": "sekta",
+    "pron": "/sékta/",
+    "pos": "n. f.",
+    "defs": [
+      "sect, school of thought"
+    ],
+    "ex": [
+      "Una iletsebra de la sekta.",
+      "An enticement to the sect."
+    ]
+  },
+  {
     "word": "sekwere",
     "pron": "/sekwere/",
     "pos": "v. II",
@@ -8243,6 +8974,18 @@ const vocabData = [
     "ex": [
       "Sempre so kon te.",
       "I'm always with you."
+    ]
+  },
+  {
+    "word": "semente",
+    "pron": "/seménte/",
+    "pos": "n. f.",
+    "defs": [
+      "seed"
+    ],
+    "ex": [
+      "Semente es lu sangu de lus Kristjanus.",
+      "The blood of Christians is seed."
     ]
   },
   {
@@ -8508,6 +9251,18 @@ const vocabData = [
     ]
   },
   {
+    "word": "site",
+    "pron": "/site/",
+    "pos": "n. f.",
+    "defs": [
+      "thirst"
+    ],
+    "ex": [
+      "Un Korbu, mesu-mortu de site.",
+      "A Crow, half-dead with thirst."
+    ]
+  },
+  {
     "word": "silentsju",
     "pron": "/silentsju/",
     "pos": "n. m.",
@@ -8577,6 +9332,19 @@ const vocabData = [
     "ex": [
       "A la sinistra-mea.",
       "At my left hand."
+    ]
+  },
+  {
+    "word": "skala",
+    "pron": "/skála/",
+    "pos": "n. f.",
+    "defs": [
+      "ladder",
+      "staircase, stairs"
+    ],
+    "ex": [
+      "Bidai una skala de bronsu.",
+      "I saw a ladder of bronze."
     ]
   },
   {
@@ -9003,6 +9771,30 @@ const vocabData = [
     ]
   },
   {
+    "word": "suspendere",
+    "pron": "/susˈpendere/",
+    "pos": "v. II",
+    "defs": [
+      "to hang, suspend"
+    ],
+    "ex": [
+      "Suspendivemu kitaras-nostas.",
+      "We hung our harps."
+    ]
+  },
+  {
+    "word": "sveglare",
+    "pron": "/zveˈglare/",
+    "pos": "v. I",
+    "defs": [
+      "to wake up, awaken"
+    ],
+    "ex": [
+      "Kuandu lu Lepore sveglausu.",
+      "When the Hare woke up."
+    ]
+  },
+  {
     "word": "surgere",
     "pron": "/surgere/",
     "pos": "v. II",
@@ -9012,6 +9804,18 @@ const vocabData = [
     "ex": [
       "Gratsia surgvit en-elu.",
       "Grace sprang up in it."
+    ]
+  },
+  {
+    "word": "surditate",
+    "pron": "/surditáte/",
+    "pos": "n. f.",
+    "defs": [
+      "deafness"
+    ],
+    "ex": [
+      "Rumppisti surditate-mea.",
+      "You shattered my deafness."
     ]
   },
   {
@@ -9198,6 +10002,19 @@ const vocabData = [
     ]
   },
   {
+    "word": "temone",
+    "pron": "/temone/",
+    "pos": "n. m.",
+    "defs": [
+      "plough-beam"
+    ],
+    "ex": [
+      "Lu temone du aratru.",
+      "The beam of the plough."
+    ],
+    "note": "Attested in Berber as atmun"
+  },
+  {
     "word": "tenere",
     "pron": "/tenere/",
     "pos": "v. II",
@@ -9219,6 +10036,18 @@ const vocabData = [
     "ex": [
       "La terra intera.",
       "The whole earth."
+    ]
+  },
+  {
+    "word": "testudine",
+    "pron": "/tesˈtudine/",
+    "pos": "n. f.",
+    "defs": [
+      "tortoise, turtle"
+    ],
+    "ex": [
+      "La Testudine aviva vintu.",
+      "The Tortoise had won."
     ]
   },
   {
@@ -9450,6 +10279,18 @@ const vocabData = [
     ]
   },
   {
+    "word": "triomfu",
+    "pron": "/trjómfu/",
+    "pos": "n. m.",
+    "defs": [
+      "triumph, victory"
+    ],
+    "ex": [
+      "La matsa del triomfu.",
+      "The mark of triumph."
+    ]
+  },
+  {
     "word": "tronu",
     "pron": "/tronu/",
     "pos": "n. m.",
@@ -9582,6 +10423,18 @@ const vocabData = [
     ]
   },
   {
+    "word": "tsekitate",
+    "pron": "/tsekitáte/",
+    "pos": "n. f.",
+    "defs": [
+      "blindness"
+    ],
+    "ex": [
+      "Fugasti tsekitate-mea.",
+      "You scattered my blindness."
+    ]
+  },
+  {
     "word": "turre",
     "pron": "/turre/",
     "pos": "n. f.",
@@ -9677,6 +10530,18 @@ const vocabData = [
     "ex": [
       "Lu unu a lu altru.",
       "One to another."
+    ]
+  },
+  {
+    "word": "urna",
+    "pron": "/urna/",
+    "pos": "n. f.",
+    "defs": [
+      "pitcher, jar, urn"
+    ],
+    "ex": [
+      "Arrivau a una urna ke era statu plena de akua.",
+      "He came upon a pitcher that had been full of water."
     ]
   },
   {

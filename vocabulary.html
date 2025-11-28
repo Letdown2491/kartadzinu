@@ -247,8 +247,8 @@
     </main>
 
     <footer>
-        <p><strong>Kartadzinu-English Dictionary</strong> — Version 3.1, November 2025</p>
-        <p>853 headwords</p>
+        <p><strong>Kartadzinu-English Dictionary</strong> — Version 3.4, November 2025</p>
+        <p>924 headwords</p>
     </footer>
 
     <script src="js/vocab-data.js"></script>
@@ -296,10 +296,10 @@
             return;
         }
 
-        // Group by first letter
+        // Group by first letter (normalized)
         const grouped = {};
         entries.forEach(e => {
-            const letter = e.word[0].toUpperCase();
+            const letter = baseLetter(e.word[0]);
             if (!grouped[letter]) grouped[letter] = [];
             grouped[letter].push(e);
         });

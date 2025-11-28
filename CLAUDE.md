@@ -61,12 +61,11 @@ rumantsu/
 
 **After any translation or language work, ALWAYS update the reference documents:**
 
-1. **New vocabulary** → Add to `reference/vocabulary.md`
-   - Add new verbs to the appropriate verb section
-   - Add new nouns to the appropriate noun section
-   - Add new adjectives to the adjectives section
-   - Create a new "### [Text Name] Specific" subsection if translating a new text
-   - Update the total word count and source coverage at the bottom
+1. **New vocabulary** → Add to BOTH `reference/vocabulary.md` AND `js/vocab-data.js`
+   - In vocabulary.md: Add new words to the appropriate sections
+   - In vocab-data.js: Add JSON entries in alphabetical order with word, pron, pos, defs, and ex fields
+   - Update the entry count in the vocab-data.js header comment and vocabulary.html footer
+   - **Any time new words appear in a translation, they MUST be added to the vocabulary**
 
 2. **New grammar features** → Add to `reference/grammar.md`
    - Document any new morphological patterns
